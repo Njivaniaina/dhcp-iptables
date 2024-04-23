@@ -141,3 +141,23 @@ main .main-left{
 main .main-right{
   padding: 2vw;
 }
+
+
+
+@media print {
+  header{
+    display: none;
+  }  
+  nav{
+    display: none;
+  }
+  .container{
+    display: none;
+  }
+  #btn-print{
+    display: none;
+  }
+  .container-sm{
+    margin-top: 10px;
+  }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO APP</title>
+    <title>DHCP</title>
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
@@ -48,18 +48,18 @@
     <div class="container">
         <form id="ipForm" action="/globale">
             <h2 style="text-align: center;" class="m-4">Configuration globale</h2>
-            <input type="hidden" class="form-control" name="netmask" id="networkAddress" placeholder="" value='<?=$subnet["netmask"] ?>'>
+            <input type="hidden" class="form-control" name="netmask" id="networkAddress" placeholder="" value='<?=$subnet["netmask"] ?>' required>
             <div class="form-group m-2">
                 <label for="networkAddress" class="m-2">Adresse IP du réseau</label>
-                <input type="text" class="form-control" name="subnet" id="networkAddress" placeholder="" value='<?=$subnet["subnet"] ?>'> 
+                <input type="text" class="form-control" name="subnet" id="networkAddress" placeholder="" value='<?=$subnet["subnet"] ?>' required> 
             </div>
             <div class="form-group m-2">
                 <label for="startRange" class="m-2">Début de la plage</label>
-                <input type="text" class="form-control" name="debut" id="startRange" placeholder="" value='<?=$subnet["range"][0] ?>'>
+                <input type="text" class="form-control" name="debut" id="startRange" placeholder="" value='<?=$subnet["range"][0] ?>' required>
             </div>
             <div class="form-group m-2">
                 <label for="endRange" class="m-2">Fin de la plage</label>
-                <input type="text" class="form-control" name="fin" id="endRange" placeholder="" value='<?=$subnet["range"][1] ?>'>
+                <input type="text" class="form-control" name="fin" id="endRange" placeholder="" value='<?=$subnet["range"][1] ?>' required>
             </div>
             <button type="submit" class="btn btn-dark mt-3" style="width: 40%;">Valider</button>
         </form>

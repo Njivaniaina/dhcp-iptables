@@ -14,3 +14,10 @@ overlay.addEventListener("click", () => {
     btnMenu.classList.toggle('hidden-btn');
     navBar.classList.remove("open");
 });
+
+
+const btnPrint = document.querySelector('#btn-print');
+
+btnPrint.addEventListener('click' , () => {
+    window.print();
+})
