@@ -20,7 +20,12 @@ class Netfilter extends BaseController
     
     # Pour le page list
     public function list(): string {
-        $tables  = new Iptables();
+        $tables  = new Iptables();  
+
+        $save  = $this->request->getVar('save');
+        if(isset($save) && $save === true) {
+            $this->saveTables();
+        }
 
         $delete = $this->request->getVar('delete');
         $line = $this->request->getVar('line');
@@ -381,5 +386,10 @@ class Netfilter extends BaseController
             $command_output = "sudo iptables -P OUTPUT " . $output;
             exec($command_output);
         }
+    }
+
+    private function saveTables(): void {
+        $command = 'sudo iptables-save';
+        exec($command);
     }
 }

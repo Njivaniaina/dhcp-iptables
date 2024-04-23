@@ -165,11 +165,3 @@ main{
     border-radius: 20px;
     background-color: gray;
 }
-
-.policy h2 {
-    background-color: rgb(9, 9, 212);
-    width: 30vw;
-    height: 10vh;
-    text-align: center;
-    vertical-align: center;
-}
