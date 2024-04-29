@@ -1,0 +1,316 @@
+CRITICAL - 2024-04-25 19:06:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "page=1"
+[Method: GET, Route: page=1]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 19:15:51 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 71.
+ 1 APPPATH/Views/index.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 19:28:36 --> ErrorException: Undefined variable $pagination
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 72.
+ 1 APPPATH/Views/index.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 19:30:08 --> ErrorException: Undefined variable $pagination
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 72.
+ 1 APPPATH/Views/index.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 19:32:54 --> ErrorException: Undefined variable $pagination
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 72.
+ 1 APPPATH/Views/index.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:50:34 --> ArgumentCountError: Too few arguments to function App\Controllers\Todos::index(), 0 passed in /home/tsanta/codeigniter4/system/CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 13.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:50:34 --> ArgumentCountError: Too few arguments to function App\Controllers\Todos::index(), 0 passed in /home/tsanta/codeigniter4/system/CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 13.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:51:15 --> ErrorException: Undefined property: App\Controllers\Todos::$router
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 26.
+ 1 APPPATH/Controllers/Todos.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:51:17 --> ErrorException: Undefined property: App\Controllers\Todos::$router
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 26.
+ 1 APPPATH/Controllers/Todos.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:51:17 --> ErrorException: Undefined property: App\Controllers\Todos::$router
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 26.
+ 1 APPPATH/Controllers/Todos.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:57:37 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 76.
+ 1 APPPATH/Views/index.php(76): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(26): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 20:57:38 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 76.
+ 1 APPPATH/Views/index.php(76): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(26): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:12:53 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::count_all()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:13:59 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:00 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:00 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:00 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:01 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:01 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:02 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::findAll()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:34 --> TypeError: strlen(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Models/TodoModel.php(20): strlen()
+ 2 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:35 --> TypeError: strlen(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Models/TodoModel.php(20): strlen()
+ 2 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:36 --> TypeError: strlen(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Models/TodoModel.php(20): strlen()
+ 2 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:14:57 --> Error: Call to undefined function App\Models\size()
+[Method: GET, Route: /]
+in APPPATH/Models/TodoModel.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(17): App\Models\TodoModel->count_all_data()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:16:06 --> Error: Call to undefined function App\Controllers\size()
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:16:07 --> Error: Call to undefined function App\Controllers\size()
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:20:11 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 20.
+ 1 APPPATH/Controllers/Todos.php(20): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:21:21 --> Error: Call to undefined method CodeIgniter\Pager\Pager::initialize()
+[Method: GET, Route: /]
+in APPPATH/Controllers/Todos.php on line 21.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-04-25 21:22:40 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: /]
+in APPPATH/Views/index.php on line 91.
+ 1 APPPATH/Views/index.php(91): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/tsanta/codeigniter4/app/Views/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Todos.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Todos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
