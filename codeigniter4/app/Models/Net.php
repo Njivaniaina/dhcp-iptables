@@ -79,10 +79,12 @@ class Net
         $dhcp = fopen("/etc/dhcp/dhcpd.conf","r");
         while($row = fgets($dhcp))
         {
-            if(strstr($row,"subnet") && !strstr($row[0],"#"))
+            if(strstr($row,"subnet") && $row[0]!="#")
             {
+                // print_r(explode(" ",$row));
                 $p1 = $row;
                 $p2 = fgets($dhcp);
+                // print_r(explode(" ",$p2));
                 $tableau = [
                     "subnet" => explode(" ",$p1)[1],
                     "netmask" => explode(" ",$p1)[3],
@@ -132,7 +134,7 @@ class Net
                 $row = fgets($fichier);
                 $mac = str_replace(";","",explode(" ethernet ",$row)[1]);
                 $row = fgets($fichier);
-                $ip = explode(" ",$row);
+                $ip = explode(";",explode(" ",$row)[3])[0];
                 $tableau = [
                     "nom_hosts" => $nom_hote,
                     "mac" => $mac,
@@ -175,7 +177,8 @@ class Net
         // $this->supprimerSubnet();
         // if($error->test_subnet($subnet,$netmask,$min,$max))
         // {
-        $this->addSubnet($subnet,$netmask,$min,$max);
+        if(strlen($subnet) && strlen($netmask) && strlen($min) && strlen($max))
+            $this->addSubnet($subnet,$netmask,$min,$max);
         // }$this->removeSubnetWithLines();
         // $this->supprimerSubnet();
     }
@@ -317,20 +320,6 @@ class Net
     public function modifHost($nom,$mac,$ip)
     {
         $this->supprimerHost($nom);
-        // $num_host = $this->getLigneHost($nom);
-        // $fichier = fopen("/etc/dhcp/dhcpd.conf","r+");
-        // $num_ligne = 1;
-        // while($row = fgets($fichier))
-        // {
-        //     if($num_ligne == $num_host)
-        //     {
-        //         break;
-        //     }
-        //     $num_ligne++;
-        // }
-        // $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
-        // fputs($fichier,$host);
-        // fclose($fichier);
         $this->addHost($nom,$mac,$ip);
         $this->range();
     }
@@ -356,5 +345,5 @@ class Net
         }
         fclose($fichier);
     }
-
 }
+?>
