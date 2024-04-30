@@ -18,6 +18,7 @@ class Dhcp extends BaseController
         $fin=$this->request->getVar("fin");
         $data['subnet']=$n->getSubnet();
         $n->modifierSubnet($subnet,$netmask,$debut,$fin);
+        $n->range();
         return view('globale',$data);
     }
     
