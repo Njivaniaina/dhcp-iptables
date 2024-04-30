@@ -175,6 +175,7 @@ class Net{
         {
             $this->addSubnet($subnet,$netmask,$min,$max);
         }
+        $this->range();
     }
 
     public function supprimerSubnet_s()
@@ -194,6 +195,7 @@ class Net{
         {
             $this->supprimerSubnet();
         }
+        $this->range();
     }
 
     public function getLinesSubnet()
@@ -236,6 +238,7 @@ class Net{
                 $this->removeSubnetWithLines();
             }
         }
+        $this->range();
     }
 
     public function addSubnet($subnet,$netmask,$min,$max)
@@ -255,6 +258,7 @@ class Net{
             fputs($fichier,$cmd);
         }
         fclose($fichier);
+        $this->range();
     }
 
     public function getLinesHost()
@@ -289,6 +293,7 @@ class Net{
             }
             $this->removeHostWithLines();
         }
+        $this->range();
     }
 
     public function addHost($nom,$mac,$ip)
@@ -305,6 +310,7 @@ class Net{
             return "donnees non satisfaisantes!\n";
         }
         fclose($fichier);
+        $this->range();
     }
 
     public function modifHost($nom,$mac,$ip)
