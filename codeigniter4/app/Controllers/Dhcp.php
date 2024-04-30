@@ -28,6 +28,18 @@ class Dhcp extends BaseController
         $host=$this->request->getVar('nom_hote');
         $mac=$this->request->getVar('mac');
         $ip=$this->request->getVar('ip');
+        if($this->request->getVar('supprimer')!="")
+        {
+            $num_ligne = $this->request->getVar("supprimer");
+            $lignes = $n->getLinesHost();
+            foreach($lignes as $key=>$value)
+                {
+                    if($key+1 == $num_ligne)
+                        {
+                            $n->delHostWithLines($value);
+                        }
+                }
+        }
         if((strcmp($host,"")!=0 && strcmp($mac,"")!=0) && strcmp($ip,"")!=0){
             $n->addHost($host,$mac,$ip);
         }

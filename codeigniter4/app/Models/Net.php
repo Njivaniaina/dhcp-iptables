@@ -364,6 +364,16 @@ class Net
         }
         fclose($fichier);
     }
+
+    public function delHostWithLines($num_ligne)
+    {
+        $nom_fichier = "/etc/dhcp/dhcpd.conf";
+        for($i = 0;$i < 4;$i++)
+        {
+            $commande = "sudo sed -i '".$num_ligne."d' $nom_fichier";
+            shell_exec($commande);
+        }
+    }
 }
 $n = new Net();
 // $n->addSubnet("mille","467543","123","hello");

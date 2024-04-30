@@ -73,6 +73,7 @@
             <th scope="col">Nom d'hôte</th>
             <th scope="col">Adresse mac</th>
             <th scope="col">Adresse ip</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -83,6 +84,9 @@
                         <td><?=$m['nom_hosts'] ?></td>
                         <td><?=$m['mac'] ?></td>
                         <td><?=$m['ip'] ?></td>
+                         <?php
+                               echo "<td><a href='/specific?supprimer=$i'>$i</a></td>"
+                            ?>
                     </tr>
                 <?php $i++;?>
             <?php endforeach; ?>
