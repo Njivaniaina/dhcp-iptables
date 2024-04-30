@@ -313,4 +313,26 @@ class Net{
         $this->addHost($nom,$mac,$ip);
     }
 
+    public function range()
+    {
+        $subnet = $this->getSubnet();
+        $host = $this->getHost();
+        $this->removeHostWithLines();
+        $this->supprimerSubnet();
+        $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
+        $p = str_replace("\n","",$subnet["subnet"]);
+        $s = str_replace("\n","",$subnet["netmask"]);
+        $m = str_replace("\n","",$subnet["range"][0]);
+        $max = str_replace("\n","",$subnet["range"][1]);
+        $this->addSubnet($p,$s,$m,$max);
+        foreach($host as $h)
+        {
+            $nom = str_replace("\n","",$h['nom_hosts']);
+            $mac = str_replace("\n","",$h['mac']);
+            $ip = explode(";",$h['ip'][3])[0];
+            $this->addHost($nom,$mac,$ip);
+        }
+        fclose($fichier);
+    }
+
 }
