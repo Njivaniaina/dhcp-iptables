@@ -12,7 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/netfilter.css" />
+    <link rel="stylesheet" href="../css/netfilter_police.css" />
   </head>
   <body>
     <header>

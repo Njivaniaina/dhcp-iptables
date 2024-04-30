@@ -25,6 +25,11 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
+        <div class="save">
+          <a href="/netfilter/list?save=true">
+            <button>Save</button>
+          </a>
+        </div>
     </header>
     
     <nav>
@@ -64,6 +69,7 @@
                 <h1>List of the rules</h1>
                 <div class="element">
                     <?php foreach($chain as $c): ?>
+                      <?php if($c[0] === "INPUT" || $c[0] === "OUTPUT" || $c[0] === "FORWARD"): ?>
                         <h2><?php echo $c[0]; ?></h2>
                         <table class="tab" >
                             <tr class="title_line">
@@ -89,6 +95,7 @@
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </table>
+                      <?php endif; ?>
                     <?php endforeach; ?>
             </div>
         </div>
