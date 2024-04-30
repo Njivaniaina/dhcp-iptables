@@ -1,0 +1,92 @@
+CRITICAL - 2024-04-30 06:07:52 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(78): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:07:59 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: specific]
+in APPPATH/Models/Net.php on line 125.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(125): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(33): App\Models\Net->getHost()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->specific()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:08:14 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(78): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:10:52 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(79): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:17:27 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(79): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:18:00 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 79.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(79): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
+CRITICAL - 2024-04-30 06:22:05 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 254.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(254): fopen()
+ 3 APPPATH/Models/Net.php(178): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(20): App\Models\Net->modifierSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/test/codeigniter4/public/index.php')
