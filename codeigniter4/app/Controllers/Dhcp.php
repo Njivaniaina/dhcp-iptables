@@ -27,10 +27,9 @@ class Dhcp extends BaseController
         $n=new Net();
         $host=$this->request->getVar('nom_hote');
         $mac=$this->request->getVar('mac');
-        $ip=$this->request->getVar('ip'); 
+        $ip=$this->request->getVar('ip');
         if((strcmp($host,"")!=0 && strcmp($mac,"")!=0) && strcmp($ip,"")!=0){
             $n->addHost($host,$mac,$ip);
-            $n->range();
         }
         $data['host']=$n->getHost();
         return view('specific',$data);

@@ -81,10 +81,28 @@ class Net
         {
             if(strstr($row,"subnet") && $row[0]!="#")
             {
-                // print_r(explode(" ",$row));
                 $p1 = $row;
                 $p2 = fgets($dhcp);
-                // print_r(explode(" ",$p2));
+                $tableau = [
+                    "subnet" => explode(" ",$p1)[1],
+                    "netmask" => explode(" ",$p1)[3],
+                    "range" => [
+                                    explode(" ",$p2)[3],
+                                    str_replace(";","",explode(" ",$p2)[4])
+                                ],
+                ];
+                fclose($dhcp);
+                return $tableau;
+            }
+        }
+        $this->addSubnet("10.254.239.0","255.255.255.224","10.254.239.10","10.254.239.20");
+        $dhcp = fopen("/etc/dhcp/dhcpd.conf","r");
+        while($row = fgets($dhcp))
+        {
+            if(strstr($row,"subnet") && $row[0]!="#")
+            {
+                $p1 = $row;
+                $p2 = fgets($dhcp);
                 $tableau = [
                     "subnet" => explode(" ",$p1)[1],
                     "netmask" => explode(" ",$p1)[3],
@@ -340,10 +358,15 @@ class Net
         {
             $nom = str_replace("\n","",$h['nom_hosts']);
             $mac = str_replace("\n","",$h['mac']);
-            $ip = explode(";",$h['ip'][3])[0];
+            // $ip = explode(";",$h['ip'][3])[0];
+            $ip = $h["ip"];
             $this->addHost($nom,$mac,$ip);
         }
         fclose($fichier);
     }
 }
+$n = new Net();
+// $n->addSubnet("mille","467543","123","hello");
+// $n->removeSubnetWithLines();
+$n->range();
 ?>
