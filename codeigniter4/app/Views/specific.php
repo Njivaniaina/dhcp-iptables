@@ -85,7 +85,7 @@
                         <td><?=$m['mac'] ?></td>
                         <td><?=$m['ip'] ?></td>
                          <?php
-                               echo "<td><a href='/specific?supprimer=$i'>$i</a></td>"
+                               echo "<td><a href='/specific?supprimer=$i'>supprimer</a></td>"
                             ?>
                     </tr>
                 <?php $i++;?>

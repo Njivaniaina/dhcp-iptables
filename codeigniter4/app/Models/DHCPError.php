@@ -9,38 +9,53 @@ class DHCPError
 
     public function test_mac($mac)
     {
-        //verifier si tout les champs d une addresse mac sont tout des hexadecimales
-        $tab_hex = explode(":",$mac);
-        if(count($tab_hex) != 6)
+        $tab = explode(":",$mac);
+        $tab_final = [];
+        if(count($tab)!=6)
         {
             return 0;
         }
-        foreach($tab_hex as $element)
+        else
         {
-            if(!($this->sumAscii($element) >= 96 && $this->sumAscii($element) <= 204))
+            foreach($tab as $element)
             {
-                return 0;
+                printf("%s -> %d\n",$element,hexdec($element));
             }
         }
-        return 1;
     }
 
     public function test_ip($ip)
     {
-        $tab_ip = explode(".",$ip);
-        if(count($tab_ip) != 4)
+        $tab = explode(".",$ip);
+        $tab_final = [];
+        foreach($tab as $element)
+        {
+            if($element!="")
+                $tab_final[] = $element;
+        }
+        if(count($tab_final) != 4)
         {
             return 0;
         }
-        foreach($tab_ip as $element)
+        else
         {
-            //156
-            if(!($this->sumAscii($element) >= 48 && $this->sumAscii($element) <= 156))
+            $tab = [];
+            foreach($tab_final as $element)
             {
-                return 0;
+                if($element >= 0 && $element <= 255)
+                {
+                    $tab[] = $element;
+                }
             }
         }
-        return 1;
+        if(count($tab) == 4)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public function sumAscii($chaine)
@@ -63,5 +78,6 @@ class DHCPError
         return $sum == 4?1:0;
     }
 }
-
+$ip = new DHCPError();
+$ip->test_mac("08:00:07:26:c0:ff");
 ?>
