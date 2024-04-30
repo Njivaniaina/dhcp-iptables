@@ -9,7 +9,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/dhcp.css" />
+    <link rel="stylesheet" href="/css/netfilter.css" />
   </head>
   <body>
     <header>
@@ -27,37 +27,44 @@
             <div class="sidebar-content">
               <ul class="lists">
                 <li class="list">
-                  <a href="index.html" class="nav-link">
+                  <a href="/netfilter" class="nav-link">
                     <span class="link">Home</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="./pages/work.html" class="nav-link">
+                  <a href="/netfilter/list" class="nav-link">
                     <span class="link">List</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="./pages/work.html" class="nav-link">
+                  <a href="/netfilter/add" class="nav-link">
                     <span class="link">Add</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="./pages/work.html" class="nav-link">
+                  <a href="/netfilter/police" class="nav-link">
                     <span class="link">Policy</span>
                   </a>
                 </li>            
               </ul>
             </div>
         </div>
-      
     </nav>
     <section class="overlay"></section>
     
 
     <main>
-      
+      <div class="content">
+          <div class="content-item">
+              <h1>Welcome</h1>
+              <div class="context">
+                  <p>This sites can access on the tables rules IP!!!</p><br>
+                  <a href="#">Voir plus...</a>
+              </div>
+          </div>
+      </div>
     </main>
 
-    <script src="./js/script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
