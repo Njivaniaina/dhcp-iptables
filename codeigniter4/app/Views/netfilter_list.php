@@ -26,7 +26,7 @@
             <h1>NETFILTER</h1>
         </div>
         <div class="save">
-          <a href="/netfilter/list?save=true">
+          <a href="/netfilter/list?save=t">
             <button>Save</button>
           </a>
         </div>

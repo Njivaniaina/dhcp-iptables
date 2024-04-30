@@ -23,7 +23,7 @@ class Netfilter extends BaseController
         $tables  = new Iptables();  
 
         $save  = $this->request->getVar('save');
-        if(isset($save) && $save === true) {
+        if(isset($save) && $save === "t") {
             $this->saveTables();
         }
 
@@ -55,8 +55,8 @@ class Netfilter extends BaseController
     public function police(): string {
         $tables  = new Iptables();
 
-        $data = $tables->get_table_csv();
         $this->changePolice();
+        $data = $tables->get_table_csv();
         $d['rules'] = $data;
 
         return view('netfilter_police', $d);
