@@ -66,9 +66,10 @@ class DHCPError
     }
 }
 
-class Net{
-
-    public function __construct(){
+class Net
+{
+    public function __construct()
+    {
 
     }
 
@@ -132,7 +133,6 @@ class Net{
                 $mac = str_replace(";","",explode(" ethernet ",$row)[1]);
                 $row = fgets($fichier);
                 $ip = explode(" ",$row);
-                echo str_replace(";","",$ip[3]);
                 $tableau = [
                     "nom_hosts" => $nom_hote,
                     "mac" => $mac,
@@ -170,12 +170,14 @@ class Net{
     public function modifierSubnet($subnet,$netmask,$min,$max)
     {
         //pour la modification
-        $error = new DHCPError();
-        if($error->test_subnet($subnet,$netmask,$min,$max))
-        {
-            $this->addSubnet($subnet,$netmask,$min,$max);
-        }
-        $this->range();
+        // $error = new DHCPError();
+        // $this->removeSubnetWithLines();
+        // $this->supprimerSubnet();
+        // if($error->test_subnet($subnet,$netmask,$min,$max))
+        // {
+        $this->addSubnet($subnet,$netmask,$min,$max);
+        // }$this->removeSubnetWithLines();
+        // $this->supprimerSubnet();
     }
 
     public function supprimerSubnet_s()
@@ -195,7 +197,6 @@ class Net{
         {
             $this->supprimerSubnet();
         }
-        $this->range();
     }
 
     public function getLinesSubnet()
@@ -238,7 +239,6 @@ class Net{
                 $this->removeSubnetWithLines();
             }
         }
-        $this->range();
     }
 
     public function addSubnet($subnet,$netmask,$min,$max)
@@ -247,18 +247,13 @@ class Net{
     //que cette fonction supprime d abord tout les subnet existantes
         $this->removeSubnetWithLines();
         $this->supprimerSubnet();
-        $error = new DHCPError();
-        if($error->test_subnet($subnet,$netmask,$min,$max))
-        {
             $ligne1 = "subnet $subnet netmask $netmask {\n";
             $ligne2 = "  range $min $max\n";
             $ligne3 = "  option routers rtr-239-0-1.example.org, rtr-239-0-2.example.org;\n}\n";
             $cmd = $ligne1.$ligne2.$ligne3;
             $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
             fputs($fichier,$cmd);
-        }
-        fclose($fichier);
-        $this->range();
+            fclose($fichier);
     }
 
     public function getLinesHost()
@@ -293,30 +288,51 @@ class Net{
             }
             $this->removeHostWithLines();
         }
-        $this->range();
     }
 
     public function addHost($nom,$mac,$ip)
     {
         $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
-        $error = new DHCPError();
-        if($error->test_mac($mac) && strlen($nom) > 0)
-        {
+
             $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
             fputs($fichier,$host);
-        }
-        else
-        {
-            return "donnees non satisfaisantes!\n";
-        }
+
         fclose($fichier);
-        $this->range();
+    }
+
+    public function getLigneHost($nom)
+    {
+        $num_ligne = 1;
+        $fichier = fopen("/etc/dhcp/dhcpd.conf","r");
+        while($row = fgets($fichier))
+        {
+            if(strstr($row,$nom) && $row[0]!="#")
+            {
+                return $num_ligne;
+            }
+            $num_ligne++;
+        }
     }
 
     public function modifHost($nom,$mac,$ip)
     {
         $this->supprimerHost($nom);
+        // $num_host = $this->getLigneHost($nom);
+        // $fichier = fopen("/etc/dhcp/dhcpd.conf","r+");
+        // $num_ligne = 1;
+        // while($row = fgets($fichier))
+        // {
+        //     if($num_ligne == $num_host)
+        //     {
+        //         break;
+        //     }
+        //     $num_ligne++;
+        // }
+        // $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
+        // fputs($fichier,$host);
+        // fclose($fichier);
         $this->addHost($nom,$mac,$ip);
+        $this->range();
     }
 
     public function range()
