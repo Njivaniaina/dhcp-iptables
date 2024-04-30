@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>TODO APP</title>
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
@@ -45,6 +45,8 @@
       
     </nav>
     <section class="overlay"></section>
+    
+
     <div class="container">
         <form action="/specific" method="get">
         <h2 style="text-align: center;" class="m-4">Configuration spécifique</h2>
@@ -63,16 +65,14 @@
             <button type='submit' class='btn btn-dark m-4'>Fixer</button>
         </form>
         <h4 style='margin:10px;'>Voici la liste des machines avec les IP fixés</h4>
-    </div>
     <?php if (!empty($host)) : ?>
-        <div class='container-sm'>
-        <button type='button' class='btn btn-dark m-4' id='btn-print'>Imprimer</button>
         <table class="table table-dark table-striped">
         <thead>
             <tr>
             <th scope="col">N°</th>
             <th scope="col">Nom d'hôte</th>
             <th scope="col">Adresse mac</th>
+            <th scope="col">Adresse ip</th>
             </tr>
         </thead>
         <tbody>
@@ -82,16 +82,19 @@
                         <td><?= $i; ?></td>
                         <td><?=$m['nom_hosts'] ?></td>
                         <td><?=$m['mac'] ?></td>
+                        <td><?=$m['ip'] ?></td>
                     </tr>
                 <?php $i++;?>
             <?php endforeach; ?>
         </tbody>       
-        </table>
-        </div>
-        
+    </table>
     <?php else : ?>
         <h2 style="margin:4vw;">Aucune machine fixer pour l'instant</h2>
     <?php endif; ?>
+    <form action='./create' method='get'>
+        <button type="submit" class='btn btn-primary'>Fixer l'ip de'une nouvelle machine</button>
+    </form>
+    </div>
     <script src="./js/script.js"></script>
   </body>
 </html>
