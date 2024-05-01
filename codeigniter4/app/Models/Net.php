@@ -150,7 +150,7 @@ class Net
             {
                 $nom_hote = explode(" ",$row)[1];
                 $row = fgets($fichier);
-                $mac = str_replace(";","",explode(" ethernet ",$row)[1]);
+                $mac = str_replace("\n","",str_replace(";","",explode(" ethernet ",$row)[1]));
                 $row = fgets($fichier);
                 $ip = explode(";",explode(" ",$row)[3])[0];
                 $tableau = [
@@ -314,9 +314,11 @@ class Net
     public function addHost($nom,$mac,$ip)
     {
         $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
-
-            $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
-            fputs($fichier,$host);
+            if($nom!="" && $mac!="" && $ip!="")
+            {
+                $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
+                fputs($fichier,$host);
+            }
 
         fclose($fichier);
     }
@@ -374,9 +376,34 @@ class Net
             shell_exec($commande);
         }
     }
+
+    public function modif_host_lines($l,$nom,$mac,$ip)//pour modifier une personne a une ligne specifie
+    {//il restera sur le meme ligne si tout les host sont alignes !
+        $l--;
+        $num_ligne = $this->getLigneHost($nom);
+        $tab = $this->getHost();
+        $ligne = $this->getLinesHost();
+        $tab[$l]['nom_hosts'] = $nom;
+        $tab[$l]['mac'] = $mac;
+        $tab[$l]['ip'] = $ip;
+        $this->removeHostWithLines();
+        foreach($tab as $h)
+        {
+            $this->addHost($h['nom_hosts'],$h['mac'],$h['ip']);
+        }
+        $this->range();
+    }
+
+    public function getHostWithLines($num_ligne)
+    {
+        $tab = $this->getHost();
+        return $tab[$num_ligne-1];
+    }
 }
-$n = new Net();
+// $n = new Net();
+// $n->modif_host_lines(1,"junior","467543","123");
+// $n->removeHostWithLines();
 // $n->addSubnet("mille","467543","123","hello");
 // $n->removeSubnetWithLines();
-$n->range();
+// $n->range();
 ?>
