@@ -13,7 +13,7 @@ class Netfilter extends BaseController
     }
 
     public function error($msg): string {
-        $this->request->getVar("");
+        //$this->request->getVar("");
         $data["msg"] = $msg;
         return view('error', $data);
     }
@@ -41,11 +41,11 @@ class Netfilter extends BaseController
     }
 
     # Pour le page d'ajout
-    public function add(): string {
+    public function add(): string{
         $tables  = new Iptables();
 
         $data = $tables->get_interface_csv();
-        $this->addData("/netfilter/list");
+        //$this->addData("/netfilter/list");
         $d['interface_iptables'] = $data;
 
         return view('netfilter_add', $d);
@@ -65,13 +65,14 @@ class Netfilter extends BaseController
     ################################
     #   Pour l'ajout d'une regle   # 
     ################################
-    public function addData($lien): void {
-        $command = "sudo iptables -A "; # Pour la commande finale
+    public function addData(): string{
+        $command = "sudo iptables -A ";                 # Pour la commande finale
         $exist = false;
 
         $chain = $this->request->getVar("chain");
         if(isset($chain))
             $exist = true;
+
         $target = $this->request->getVar("target");
         $protocole = $this->request->getVar("protocole");
         $port = $this->request->getVar("port");
@@ -93,186 +94,174 @@ class Netfilter extends BaseController
     
     /*  ---------------------------------------- default check ------------------------------------- */
         
-        if(isset($protocole))
-        {
+        if(isset($protocole)){
             $p = $this->request->getVar("prot");
             if(isset($p))
                 $command = $command  . "-p " . $p . " ";
         }
      
-        if(isset($port))
-        {
+        if(isset($port)){
             $po = $this->request->getVar("p");
             if($po != ""){
-                if(multiPort($po))          // verify the chaine structure
+                if($this->multiPort($po))          // verify the chaine structure
                 {
                     $command = $command  . "-m multiport --ports " . $po . " ";
                 }                
-                else
+                else{
                     $command = $command  . "--dport " . $po . " ";        
+                }
             }
-            else    
-                error("port empty");
+            else{    
+                return $this->error("port empty");
+            }
         }
     /* --------------------------------------------check error ------------------------------------- */ 
     
     
-        if(isset($check_mac))
-            $command = checkMac($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
-        
-        if(isset($check_source))
-            $command = checkS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+        if(isset($check_mac)){
+
+            if($chain != "INPUT")
+                return $this->error("can not be OUTPUT or FORWARD");
+
+            if(isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            {
+                $mac = $this->request->getVar("mac");
+                
+                if($mac != "")
+                    if($this->macStruct($mac))
+                        $command = $command  . "-m mac --mac-source " . $mac . " ";
+                    else{
+                        return $this->error("mac incorrect structure");
+                    }
+                else{
+                    return $this->error("mac empty");      
+                } 
+            }
+            else{
+                return $this->error("erreur multiCheck mac");
+            }
+        }
+
+        if(isset($check_source)){
+            //$command = $this->checkS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
             
+            if($chain != "INPUT")
+                return $this->error("can not be OUTPUT or FORWARD");
+
+            if($chain == "INPUT" && !isset($check_mac) && isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            {
+                $source = $this->request->getVar("source");
+                try{
+                    if($source == "")
+                        throw new Exception("source empty");
+
+                    try{
+                        if(!isIP($source) && !isURL($source))    
+                            throw new Exception("incorrect source structur");
+                        
+                        
+                        $command = $command  . "-s " . $source . " ";   
+
+                    }catch(Exception $e){
+                        return $this->error($e->getMessage());
+                    }
+
+                            
+                }catch(Exception $e){
+                    return $this->error($e->getMessage());
+                }
+                
+            }
+            else{ 
+                return $this->error("erreur multiCheck source");
+            }
     
-        if(isset($check_destination))
-            $command = checkD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
-           
+        }
+
+        if(isset($check_destination)){
+            //$command = $this->checkD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+         
+            if($chain != "OUTPUT")
+            return $this->error("can not be INPUT or FORWARD");
+
+            if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_s) && isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            { 
+                $destination = $this->request->getVar("destination");
+                try{
+                    if($destination == "")
+                        throw new Exception("destination empty");
+
+                    try{
+                        if(!isIP($destination) && !isURL($destination))    
+                            throw new Exception("incorrect destination structur");
+                        
+                        
+                        $command = $command  . "-d " . $destination . " ";   
+
+                    }catch(Exception $e){
+                        return $this->error($e->getMessage());
+                    }
+
+                            
+                }catch(Exception $e){
+                    return $this->error($e->getMessage());
+                }
+            }
+        
+            else{
+                return $this->error("erreur multiCheck destination");
+            }
+                
+        }
     
-        if(isset($check_interface_source))
-            $command = checkIfaceS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+        if(isset($check_interface_source)){
+            //$command = $this->checkIfaceS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+            if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && isset($check_i_s))
+            {
+                $interface_source = $this->request->getVar("interface_source");
+                if(isset($interface_source))
+                    $command = $command  . "-i " . $interface_source . " ";
+                else{
+                    return $this->error("source iface empty");
+                }
+            }
+            else{
+                return $this->error("erreur multiCheck iface source");
+            }
         
-        if(isset($check_interface_destination))
-            $command = checkIfaceD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
-        
+        }
+
+        if(isset($check_interface_destination)){
+            //$command = $this->checkIfaceD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+            if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && isset($check_i_d) && !isset($check_i_s))
+            {
+                $interface_destination = $this->request->getVar("interface_destination");
+                if(isset($interface_destination))
+                    $command = $command  . "-o " . $interface_destination . " ";
+                else{
+                    return $this->error("destination iface empty");
+            }
+            }
+            else{
+                return $this->error("erreur multiCheck iface destination");   
+            }
+
+        }
+
         if($exist) {
             exec($command);
-            header("location:$lien");
         }
+
+        $tables  = new Iptables();
+        $data = $tables->get_interface_csv();
+        $d['interface_iptables'] = $data;
+
+        return view('netfilter_add', $d);
     }
     
     
     /* -------------------------------------function-------------------------------------- */
-    
-    function checkMac($command, $chain, $check_mac, $check_s, $check_d, $check_i_s, $check_i_d)
-    {
-        if($chain != "INPUT")
-            error("can not be OUTPUT or FORWARD");
-
-        if(isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
-        {
-            $mac = $this->request->getVar("mac");
-            
-            if($mac != "")
-                if(macStruct($mac))
-                    $command = $command  . "-m mac --mac-source " . $mac . " ";
-                else
-                    error("mac incorrect structure");
-            else
-                error("mac empty");       
-        }
-        else
-            error("erreur multiCheck mac");
-
-        return $command;
-    }
-
-    function checkS($command, $chain, $check_mac, $check_s, $check_d, $check_i_s, $check_i_d)
-    {
-        if($chain != "INPUT")
-            error("can not be OUTPUT or FORWARD");
-
-        if($chain == "INPUT" && !isset($check_mac) && isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
-        {
-            $source = $this->request->getVar("source");
-            try{
-                if($source == "")
-                    throw new Exception("source empty");
-
-                try{
-                    if(!isIP($source) && !isURL($source))    
-                        throw new Exception("incorrect source structur");
-                    
-                    
-                    $command = $command  . "-s " . $source . " ";   
-
-                }catch(Exception $e){
-                    error($e->getMessage());
-                    return null;
-                }
-
-                        
-            }catch(Exception $e){
-                error($e->getMessage());
-                return null;
-            }
-            
-        }
-        else   
-            error("erreur multiCheck source");
-
-        return $command;
-    }
-
-    function checkD($command, $chain, $check_mac, $check_s, $check_d, $check_i_s, $check_i_d)
-    {
-        if($chain != "OUTPUT")
-            error("can not be INPUT or FORWARD");
-
-        if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_s) && isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
-        { 
-            $destination = $this->request->getVar("destination");
-            try{
-                if($destination == "")
-                    throw new Exception("destination empty");
-
-                try{
-                    if(!isIP($destination) && !isURL($destination))    
-                        throw new Exception("incorrect destination structur");
-                    
-                    
-                    $command = $command  . "-d " . $destination . " ";   
-
-                }catch(Exception $e){
-                    error($e->getMessage());
-                    return null;
-                }
-
-                        
-            }catch(Exception $e){
-                error($e->getMessage());
-                return null;
-            }
-        }
-    
-        else
-            error("erreur multiCheck destination");
-            
-        return $command;
-    }
-
-    function checkIfaceS($command, $chain, $check_mac, $check_s, $check_d, $check_i_s, $check_i_d)
-    {
-        
-        if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && isset($check_i_s))
-        {
-            $interface_source = $this->request->getVar("interface_source");
-            if(isset($interface_source))
-                $command = $command  . "-i " . $interface_source . " ";
-            else
-                error("source iface empty");
-        }
-        else
-            error("erreur multiCheck iface source");
-        
-        return $command;
-    }
-
-    function checkIfaceD($command, $chain, $check_mac, $check_s, $check_d, $check_i_s, $check_i_d)
-    {
-        if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && isset($check_i_d) && !isset($check_i_s))
-        {
-            $interface_destination = $this->request->getVar("interface_destination");
-            if(isset($interface_destination))
-                $command = $command  . "-o " . $interface_destination . " ";
-            else
-                error("destination iface empty");
-        }
-        else
-            error("erreur multiCheck iface destination");   
-
-        return $command;
-    }
-
+   
     function multiPort($port)
     {
         if(strpos($port,','))
@@ -368,6 +357,7 @@ class Netfilter extends BaseController
     ################################
     # Pour le changement de police #
     ################################
+
     public function changePolice(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
