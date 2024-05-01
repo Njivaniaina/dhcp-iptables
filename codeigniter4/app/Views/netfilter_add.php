@@ -127,7 +127,7 @@
                             </select><br>
                         </div>
 
-                        <input type="submit" value="Ajouter" class="button_add"/>
+                        <input type="submit" value="Add" class="button_add"/>
                     </form>
                 </div>
             </div>

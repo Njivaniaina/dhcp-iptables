@@ -79,7 +79,7 @@
                             <option value="DROP" <?php if($chain[2][1]==="DROP") echo "selected";?>>DROP</option>
                             <option value="REJECT" <?php if($chain[2][1]==="REJECT") echo "selected";?>>REJECT</option>
                         </select><br>
-                        <input type="submit" class="button_submit" value="Modifier"/>
+                        <input type="submit" class="button_submit" value="Change"/>
                     </form>
                 </div>
             </div>
