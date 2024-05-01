@@ -48,7 +48,7 @@
                   <a href="/netfilter/police" class="nav-link">
                     <span class="link">Policy</span>
                   </a>
-                </li>            
+                </li>    <h2>The Policy</h2>        
               </ul>
             </div>
         </div>
@@ -58,8 +58,8 @@
     <main>
         <div class="content">
             <div class="content-item">
+            <h1>The Policy</h1>
                 <div class="policy">
-                    <h2>The Policy</h2>
                     <form action="./police" method="post">
                         <label for="input">INPUT </label>
                         <select name="input" id="input">
@@ -79,7 +79,7 @@
                             <option value="DROP" <?php if($chain[2][1]==="DROP") echo "selected";?>>DROP</option>
                             <option value="REJECT" <?php if($chain[2][1]==="REJECT") echo "selected";?>>REJECT</option>
                         </select><br>
-                        <input type="submit" value="Modifier"/>
+                        <input type="submit" class="button_submit" value="Modifier"/>
                     </form>
                 </div>
             </div>
