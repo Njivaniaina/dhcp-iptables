@@ -30,3 +30,183 @@ in APPPATH/Controllers/Netfilter.php on line 33.
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
  7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 06:53:34 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 192.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 06:54:36 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 192.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 06:57:01 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 192.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 06:59:08 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 156.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 06:59:54 --> Exception: source empty
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 156.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:03:02 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 156.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:05:25 --> Error: Class "CodeIgniter\Exceptions\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:07:18 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:11:50 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:11:59 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:13:29 --> Error: Class "CodeIgniter\Config\Exceptions" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:13:42 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:13:54 --> Error: Class "CodeIgniter\Config\Exceptions" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:25:42 --> Error: Class "CodeIgniter\Config\Exceptions\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:26:06 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:28:27 --> Error: Class "CodeIgniter\Exceptions\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 157.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:30:37 --> Error: Class "App\Controllers\Exception" not found
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 156.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-02 07:31:58 --> Error: Call to undefined function App\Controllers\isIP()
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 159.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')

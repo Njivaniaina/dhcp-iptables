@@ -123,7 +123,7 @@ class Netfilter extends BaseController
             if($chain != "INPUT")
                 return $this->error("can not be OUTPUT or FORWARD");
 
-            if(isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            if(isset($check_mac) && !isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             {
                 $mac = $this->request->getVar("mac");
                 
@@ -143,31 +143,31 @@ class Netfilter extends BaseController
         }
 
         if(isset($check_source)){
-            //$command = $this->checkS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+            //$command = $this->checkS($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
             
             if($chain != "INPUT")
                 return $this->error("can not be OUTPUT or FORWARD");
 
-            if($chain == "INPUT" && !isset($check_mac) && isset($check_s) && !isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            if($chain == "INPUT" && !isset($check_mac) && isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             {
                 $source = $this->request->getVar("source");
                 try{
                     if($source == "")
-                        throw new Exception("source empty");
+                        throw new \Exception("source empty");
 
                     try{
-                        if(!isIP($source) && !isURL($source))    
-                            throw new Exception("incorrect source structur");
+                        if(!$this->isIP($source) && !$this->isURL($source))    
+                            throw new \Exception("incorrect source structur");
                         
                         
                         $command = $command  . "-s " . $source . " ";   
 
-                    }catch(Exception $e){
+                    }catch(\Exception $e){
                         return $this->error($e->getMessage());
                     }
 
                             
-                }catch(Exception $e){
+                }catch(\Exception $e){
                     return $this->error($e->getMessage());
                 }
                 
@@ -179,31 +179,31 @@ class Netfilter extends BaseController
         }
 
         if(isset($check_destination)){
-            //$command = $this->checkD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
+            //$command = $this->checkD($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
          
             if($chain != "OUTPUT")
-            return $this->error("can not be INPUT or FORWARD");
+                return $this->error("can not be INPUT or FORWARD");
 
-            if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_s) && isset($check_d) && !isset($check_i_d) && !isset($check_i_s))
+            if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_source) && isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             { 
                 $destination = $this->request->getVar("destination");
                 try{
                     if($destination == "")
-                        throw new Exception("destination empty");
+                        throw new \Exception("destination empty");
 
                     try{
-                        if(!isIP($destination) && !isURL($destination))    
-                            throw new Exception("incorrect destination structur");
+                        if(!$this->isIP($destination) && !$this->isURL($destination))    
+                            throw new \Exception("incorrect destination structur");
                         
                         
                         $command = $command  . "-d " . $destination . " ";   
 
-                    }catch(Exception $e){
+                    }catch(\Exception $e){
                         return $this->error($e->getMessage());
                     }
 
                             
-                }catch(Exception $e){
+                }catch(\Exception $e){
                     return $this->error($e->getMessage());
                 }
             }
@@ -215,8 +215,8 @@ class Netfilter extends BaseController
         }
     
         if(isset($check_interface_source)){
-            //$command = $this->checkIfaceS($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
-            if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && !isset($check_i_d) && isset($check_i_s))
+            //$command = $this->checkIfaceS($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
+            if(!isset($check_mac) && !isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && isset($check_interface_source))
             {
                 $interface_source = $this->request->getVar("interface_source");
                 if(isset($interface_source))
@@ -232,8 +232,8 @@ class Netfilter extends BaseController
         }
 
         if(isset($check_interface_destination)){
-            //$command = $this->checkIfaceD($command, $chain, $check_mac, $check_source, $check_destination, $check_interface_source, $check_interface_destination);
-            if(!isset($check_mac) && !isset($check_s) && !isset($check_d) && isset($check_i_d) && !isset($check_i_s))
+            //$command = $this->checkIfaceD($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
+            if(!isset($check_mac) && !isset($check_source) && !isset($check_destination) && isset($check_interface_destination) && !isset($check_interface_source))
             {
                 $interface_destination = $this->request->getVar("interface_destination");
                 if(isset($interface_destination))
