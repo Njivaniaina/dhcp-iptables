@@ -156,11 +156,11 @@ main{
 }
 
 .policy {
-    width: 30vw;
-    height: 40vh;
+    width: 80vw;
+    height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     flex-direction: column;
     border-radius: 20px;
     background-color: gray;
