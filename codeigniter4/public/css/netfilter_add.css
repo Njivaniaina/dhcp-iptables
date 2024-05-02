@@ -1,217 +1,223 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 body {
-width: 100%;
-height: 100vh;
-background-color: #ece6e6b8;
+  width: 100%;
+  height: 100vh;
+  background-color: #ece6e6b8;
 }
 
-header{
-    width: 100%;
-    height: 70px;
-    background: #fff;
-    text-align: center;
+header {
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  text-align: center;
 }
 
-h1{
-    letter-spacing: 10px;
+h1 {
+  letter-spacing: 10px;
 }
 header .logo .menu-icon {
-    position: absolute;
-    top: 15px;
-    left: 5px;
-    color: #333;
-    font-size: 40px;
-    margin-left: 20px;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  color: #333;
+  font-size: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.hidden-btn{
-    position: absolute;
-    top: 15px;
-    left: 5px;
-    color: #333;
-    font-size: 40px;
-    margin-left: 20px;
-    cursor: pointer;
-    z-index: 0;
+.hidden-btn {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  color: #333;
+  font-size: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+  z-index: 0;
 }
 
-
-header .title{
-    position: relative;
-    top: 10px;
+header .title {
+  position: relative;
+  top: 10px;
 }
 
-nav .sidebar{
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 260px;
-    padding: 20px 0;
-    background-color: #ffffff6d;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 260px;
+  padding: 20px 0;
+  background-color: #ffffff6d;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
 }
 
 nav.open .sidebar {
-    left: 0;
+  left: 0;
 }
 .sidebar .sidebar-content {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 16px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
 }
 .sidebar-content .list {
-    list-style: none;
+  list-style: none;
 }
 
 .list .nav-link {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    padding: 14px 12px;
-    border-radius: 8px;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
 }
 .lists .nav-link:hover {
-    background-color: #ff0000;
+  background-color: #ff0000;
 }
 .lists .nav-link:hover {
-    background-color:#ff0000;
+  background-color: #ff0000;
 }
 
 .nav-link .icon {
-    margin-right: 14px;
-    font-size: 20px;
-    color: #707070;
+  margin-right: 14px;
+  font-size: 20px;
+  color: #707070;
 }
 .nav-link .link {
-    font-size: 16px;
-    color: #707070;
-    font-weight: 400;
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
 }
 .lists .nav-link:hover .icon,
 .lists .nav-link:hover .link {
-    color: #fff;
+  color: #fff;
 }
 .overlay {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 1000vh;
-    width: 200%;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
 }
 nav.open ~ .overlay {
-    opacity: 1;
-    left: 260px;
-    pointer-events: auto;
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
 }
 
-main{
-    width: 100%;
-    height: 100vh;
-}  
+main {
+  width: 100%;
+  height: 100vh;
+}
 
 /*
     Pour les contenant dans la list ou dans l'ajout ou dans Homme
 */
 
 .content {
-    margin: 100px 100px;
+  margin: auto auto;
 }
 
 .content-item {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .content-item h1 {
-    color: rgb(0, 0, 0);
-    font-size: 3em;
-    text-transform: uppercase;
-    text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .formulaire {
-    width: 40vw;
-    min-height: 100vh;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    padding: 20px;
+  width: 40vw;
+  min-height: 600px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(67, 67, 255); */
+  background-color: #9599a2;
+  box-shadow: 0 0 0 0.75;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .formulaire label {
-    color: black;
-    text-align: center;
-    font-size: 1.7em;
-    font-weight: 500;
+  color: black;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 500;
 }
 
 .formulaire select {
-    height: 30px;
-    width: 18vw;
-    border-radius: 10px;
+  height: 30px;
+  width: 18vw;
+  border-radius: 10px;
 }
 
 .formulaire .subhead {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .formulaire .checkbox {
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
-    margin-top: 30px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  margin-top: 30px;
 }
 
 .formulaire .input {
-    height: 30px;
-    width: 18vw;
-    border-radius: 10px;
+  height: 30px;
+  width: 18vw;
+  border-radius: 10px;
 }
 
 .formulaire select {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-.protocole , .port , .mac, .source, .destination, .interface_source, .interface_destination {
-    display: none;
+.protocole,
+.port,
+.mac,
+.source,
+.destination,
+.interface_source,
+.interface_destination {
+  display: none;
 }
-
 
 .button_add {
-    height: 50px;
-    width: 100px;
-    font-size: 1.5em;
-    text-align: center;
-    border-radius: 10px;
-    background-color: aliceblue;
-    margin: 20px 5vw;
+  height: 50px;
+  width: 100px;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 10px;
+  background-color: aliceblue;
+  margin: 20px 5vw;
 }
