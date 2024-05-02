@@ -155,61 +155,12 @@ main {
 }
 
 .policy {
-<<<<<<< HEAD
-    width: 80vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    flex-direction: column;
-    border-radius: 20px;
-    background-color: gray;
-}
-=======
-  width: 40vw;
-  height: 50vh;
-  min-height: 400px;
-  min-width: 400px;
-  margin: 20px;
+  width: 80vw;
+  height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   flex-direction: column;
   border-radius: 20px;
-  padding: 20px;
-  background-color: #9599a2;
+  background-color: transparent;
 }
-
-.policy h2 {
-  background-color: rgb(9, 9, 212);
-  width: 30vw;
-  height: 10vh;
-  text-align: center;
-  vertical-align: center;
-}
-
-.policy label {
-  color: black;
-  text-align: center;
-  font-size: 1.7em;
-  font-weight: 500;
-}
-
-.policy select {
-  height: 30px;
-  width: 18vw;
-  border-radius: 10px;
-  font-size: 1.5em;
-}
-
-.button_change {
-  height: 30px;
-  width: 100px;
-  font-size: 1.5em;
-  text-align: center;
-  border-radius: 10px;
-  background-color: aliceblue;
-  margin: 20px 5vw;
-}
-/* Mise a jour finale zandreee*/
->>>>>>> 7fd6f72528a37a696a68cf352c642e1f9d8b40b7

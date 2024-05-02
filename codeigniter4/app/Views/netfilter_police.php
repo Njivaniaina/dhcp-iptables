@@ -59,9 +59,7 @@
     <main>
         <div class="content">
             <div class="content-item">
-            <h1>The Policy</h1>
                 <div class="policy">
-<<<<<<< HEAD
                   <div class="row">
                     <div class="col-md-8 offset-md-2 card">
                       <div class="card-header">
@@ -91,32 +89,6 @@
                         </form>
                     </div>
                   </div>
-=======
-                <!--<h2>The Policy</h2>-->
-                    <form action="./police" method="post">
-                        <label for="input">INPUT </label><br>
-                        <select name="input" id="input">
-                            <option value="ACCEPT" <?php if($chain[0][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                            <option value="DROP" <?php if($chain[0][1]==="DROP") echo "selected";?>>DROP</option>
-                            <option value="REJECT" <?php if($chain[0][1]==="REJECT") echo "selected";?>>REJECT</option>
-                        </select><br>
-
-                        <label for="forward">FORWARD </label><br>
-                        <select name="forward" id="forward">
-                            <option value="ACCEPT" <?php if($chain[1][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                            <option value="DROP" <?php if($chain[1][1]==="DROP") echo "selected";?>>DROP</option>
-                            <option value="REJECT" <?php if($chain[1][1]==="REJECT") echo "selected";?>>REJECT</option>
-                        </select><br>
-                        
-                        <label for="output">OUTPUT </label><br>
-                        <select name="output" id="output" value=<?php echo trim($chain[2][1]);?>>
-                            <option value="ACCEPT" <?php if($chain[2][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                            <option value="DROP" <?php if($chain[2][1]==="DROP") echo "selected";?>>DROP</option>
-                            <option value="REJECT" <?php if($chain[2][1]==="REJECT") echo "selected";?>>REJECT</option>
-                        </select><br>
-                        <input type="submit" class="button_change" value="Modifier"/>
-                    </form>
->>>>>>> 7fd6f72528a37a696a68cf352c642e1f9d8b40b7
                 </div>
               </div>
             </div>
