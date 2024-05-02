@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2 card">
                     <div class="card-header">
-                        Error found
+                        <span class="badge bg-warning text-dark">Error found</span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Attention</h5>
