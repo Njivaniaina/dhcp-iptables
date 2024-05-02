@@ -85,14 +85,14 @@
                             </select>
                         </div>
 
-                        <input type="checkbox" name="port" id="check_port" class="checkbox"/><label for="check_port">Port</label><br>
+                        <input type="checkbox" name="port" id="check_port" class="checkbox" /><label for="check_port">Port</label><br>
                         <div class="port">
-                            <input type="text" name="p" id="p" class="input" placeholder="80,443..."/>
+                            <input type="text" name="p" id="p" class="input" placeholder="80,443..." pattern="[0-9,]+"/>
                         </div>
 
                         <input type="checkbox" name="check_mac" id="check_mac" class="checkbox"/><label for="check_mac">Mac</label><br>
                         <div class="mac">
-                            <input type="text" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx"/><br>
+                            <input type="text" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-z:]+"/><br>
                         </div>
 
                         <input type="checkbox" name="check_source" id="check_source" class="checkbox"/><label for="check_source">Source</label><br>
