@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 use App\Models\Net;
 class Dhcp extends BaseController
@@ -33,16 +32,45 @@ class Dhcp extends BaseController
             $num_ligne = $this->request->getVar("supprimer");
             $lignes = $n->getLinesHost();
             foreach($lignes as $key=>$value)
+            {
+                if($key+1 == $num_ligne)
                 {
-                    if($key+1 == $num_ligne)
-                        {
-                            $n->delHostWithLines($value);
-                        }
+                    $n->delHostWithLines($value);
                 }
+            }
         }
-        if((strcmp($host,"")!=0 && strcmp($mac,"")!=0) && strcmp($ip,"")!=0){
-            $n->addHost($host,$mac,$ip);
+        $d = $this->request->getVar("modifier");
+        $status = $this->request->getVar("status");
+        $data['modifier']["nom_hosts"] = "";
+        $data['modifier']["mac"] = "";
+        $data['modifier']["ip"] = "";
+        if($d != "")
+        {
+            $data['modifier'] = $n->getHostWithLines($d);
+            $n->modif_host_lines($d,$data['modifier']["nom_hosts"],$data['modifier']["mac"],$data['modifier']["ip"]);
         }
+        if($host != "")
+        {
+            if($n->getLigneHost($host)>0)
+            {
+                $num = $n->getLigneHost($host);
+                $tab = $n->getLinesHost();
+                foreach($tab as $key=>$value)
+                {
+                    if($value == $num)
+                    {
+                        $num = $key;
+                        break;
+                    }
+                }
+                $n->modif_host_lines($num+1,$host,$mac,$ip);
+            }
+            else
+            {
+                $n->addHost($host,$mac,$ip);
+            }
+        }
+
         $data['host']=$n->getHost();
         return view('specific',$data);
     }
