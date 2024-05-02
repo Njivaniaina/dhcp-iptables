@@ -1,0 +1,201 @@
+CRITICAL - 2024-05-01 13:13:46 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 115.
+ 1 APPPATH/Controllers/Netfilter.php(48): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 13:52:02 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "delete=INPUT"
+[Method: GET, Route: netfilter/list/delete=INPUT/line=5]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 13:59:19 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 116.
+ 1 APPPATH/Controllers/Netfilter.php(48): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 13:59:26 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 116.
+ 1 APPPATH/Controllers/Netfilter.php(48): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:01:34 --> TypeError: App\Controllers\Netfilter::add(): Return value must be of type string, none returned
+[Method: POST, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 52.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:03:26 --> ErrorException: Undefined variable $msg
+[Method: GET, Route: netfilter/add]
+in APPPATH/Views/error.php on line 7.
+ 1 APPPATH/Views/error.php(7): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/error.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(51): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:03:29 --> ErrorException: Undefined variable $msg
+[Method: GET, Route: netfilter/add]
+in APPPATH/Views/error.php on line 7.
+ 1 APPPATH/Views/error.php(7): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/error.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(51): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:03:31 --> ErrorException: Undefined variable $msg
+[Method: GET, Route: netfilter/add]
+in APPPATH/Views/error.php on line 7.
+ 1 APPPATH/Views/error.php(7): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/error.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(51): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:03:41 --> ErrorException: Undefined variable $msg
+[Method: GET, Route: netfilter/add]
+in APPPATH/Views/error.php on line 7.
+ 1 APPPATH/Views/error.php(7): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/error.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(51): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:08:34 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 116.
+ 1 APPPATH/Controllers/Netfilter.php(48): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 14:45:58 --> ErrorException: Undefined variable $d
+[Method: GET, Route: netfilter/add]
+in APPPATH/Controllers/Netfilter.php on line 144.
+ 1 APPPATH/Controllers/Netfilter.php(144): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(48): App\Controllers\Netfilter->addData()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->add()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 16:24:19 --> ErrorException: Undefined variable $lien
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 142.
+ 1 APPPATH/Controllers/Netfilter.php(142): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 16:32:21 --> ErrorException: Undefined variable $tables
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 146.
+ 1 APPPATH/Controllers/Netfilter.php(146): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 16:34:05 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 116.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 19:21:31 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "delete=INPUT"
+[Method: GET, Route: netfilter/list/delete=INPUT/line=20]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 19:23:59 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 168.
+ 1 APPPATH/Controllers/Netfilter.php(123): App\Controllers\Netfilter->checkMac()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-01 19:24:07 --> Error: Call to undefined function App\Controllers\error()
+[Method: POST, Route: netfilter/addData]
+in APPPATH/Controllers/Netfilter.php on line 116.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->addData()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/mick/github/dhcp-iptables/codeigniter4/public/index.php')

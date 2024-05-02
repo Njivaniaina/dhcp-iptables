@@ -30,7 +30,7 @@ class Netfilter extends BaseController
         $delete = $this->request->getVar('delete');
         $line = $this->request->getVar('line');
         if(isset($delete) && isset($line)) {
-            $tables->deleteRules($delete, $line);
+            tables->deleteData($delete, $line);
         }
 
         $data = $tables->get_table_csv();

@@ -131,6 +131,7 @@ class Iptables {
     #Pour la suppression# (La function: deleteRules($chaine_utiliser, $numero_de_lignes))
     #####################
     public function deleteRules($chain, $numero) {
+        $numero += 1;
         $command = "sudo iptables -D " . $chain . " " . $numero;
         exec($command);
     }    
