@@ -59,9 +59,9 @@
               <h1>Welcome</h1>
               <div class="context">
                   <p>This sites can access on the tables rules IP!!!</p><br>
-                  <a href="#">Voir plus...</a>
-              </div>
+            </div>
           </div>
+          <div class="image"> </div>
       </div>
     </main>
 
