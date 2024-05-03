@@ -72,7 +72,15 @@ class Iptables {
                 $chain[] = $lines;
             }
             else {
-                $result[$c][] = $lines;  
+                if(count($lines) > 6) {
+                    for($i=6;$i<count($lines);$i++) {
+                        $lines[5]  = $lines[5] . " " . $lines[$i];
+                    }
+                    $result[$c][] = $lines;  
+                }
+                else {
+                    $result[$c][] = $lines;  
+                }
             }
         }
         fclose($file);

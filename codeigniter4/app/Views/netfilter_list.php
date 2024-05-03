@@ -89,7 +89,7 @@
                                         <td class="opt_tab"><?php echo $r[2];?></td>
                                         <td class="source_tab"><?php echo $r[3];?></td>
                                         <td class="destination_tab"><?php echo $r[4];?></td>
-                                        <td class="descriptiton_tab"><?php if(isset($r[5])) echo $r[5]; else echo ""; ?></td>
+                                        <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
                                         <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Supprimer</button></a></td>
                                     </tr>
                                 <?php endforeach; ?>
