@@ -19,6 +19,7 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
+        <a href=""><button class="button"></button></a>
     </header>
     
     <nav>
@@ -58,7 +59,7 @@
           <div class="content-item">
               <h1>Welcome</h1>
               <div class="context">
-                  <p>This sites can access on the tables rules IP!!!</p><br>
+                  <p>With our platform , you can easily customize your iptables rules for optimal security and performance.</p><br>
             </div>
           </div>
           <div class="image"> </div>
