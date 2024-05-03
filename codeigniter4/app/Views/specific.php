@@ -52,15 +52,15 @@
         <h2 style="text-align: center;" class="m-4">Configuration spécifique</h2>
             <div class="form-group m-2">
                 <label for="networkAddress" class="m-2">Nom d'hôte</label>
-                <input type="text" class="form-control" name="nom_hote" id="networkAddress" placeholder="">
+                <input type="text" class="form-control" name="nom_hote" id="networkAddress" placeholder="" value=<?=$modifier['nom_hosts']?>>
             </div>
             <div class="form-group m-2">
                 <label for="startRange" class="m-2">Adresse mac</label>
-                <input type="text" class="form-control" name="mac" id="startRange" placeholder="">
+                <input type="text" class="form-control" name="mac" id="startRange" placeholder="" value=<?=$modifier['mac']?>>
             </div>
             <div class="form-group m-2">
                 <label for="startRange" class="m-2">Adresse ip</label>
-                <input type="text" class="form-control" name="ip" id="startRange" placeholder="">
+                <input type="text" class="form-control" name="ip" id="startRange" placeholder="" value=<?=$modifier['ip']?> >
             </div>
             <button type='submit' class='btn btn-dark m-4'>Fixer</button>
         </form>
@@ -69,9 +69,11 @@
         <table class="table table-dark table-striped">
         <thead>
             <tr>
-            <th scope="col">N°</th>
-            <th scope="col">Nom d'hôte</th>
-            <th scope="col">Adresse mac</th>
+              <th scope="col">N°</th>
+              <th scope="col">Nom d'hôte</th>
+              <th scope="col">Adresse mac</th>
+              <th scope="col">Adresse ip</th>
+              <th scope="col" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -81,6 +83,13 @@
                         <td><?= $i; ?></td>
                         <td><?=$m['nom_hosts'] ?></td>
                         <td><?=$m['mac'] ?></td>
+                        <td><?=$m['ip'] ?></td>
+                         <?php
+                               echo "<td><a href='/specific?supprimer=$i'>supprimer</a></td>"
+                            ?>
+                          <?php
+                               echo "<td><a href='/specific?modifier=$i'>modifier</a></td>"
+                            ?>
                     </tr>
                 <?php $i++;?>
             <?php endforeach; ?>
