@@ -67,25 +67,33 @@
                       </div>
                       <div class="card-body">
                         <form action="./police" method="post">
-                          <label for="input">INPUT </label>
-                          <select stylename="input" id="input">
-                              <option value="ACCEPT" <?php if($chain[0][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                              <option value="DROP" <?php if($chain[0][1]==="DROP") echo "selected";?>>DROP</option>
-                              <option value="REJECT" <?php if($chain[0][1]==="REJECT") echo "selected";?>>REJECT</option>
-                          </select><br>
-                          <label for="forward">FORWARD </label>
-                          <select name="forward" id="forward">
-                              <option value="ACCEPT" <?php if($chain[1][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                              <option value="DROP" <?php if($chain[1][1]==="DROP") echo "selected";?>>DROP</option>
-                              <option value="REJECT" <?php if($chain[1][1]==="REJECT") echo "selected";?>>REJECT</option>
-                          </select><br>
-                          <label for="output">OUTPUT </label>
-                          <select name="output" id="output" value=<?php echo trim($chain[2][1]);?>>
-                              <option value="ACCEPT" <?php if($chain[2][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
-                              <option value="DROP" <?php if($chain[2][1]==="DROP") echo "selected";?>>DROP</option>
-                              <option value="REJECT" <?php if($chain[2][1]==="REJECT") echo "selected";?>>REJECT</option>
-                          </select><br>
-                          <input class="float-end btn btn-success" type="submit" value="Modifier"/>
+                          <div class="row align-self-end p-2 bd-highlight">
+                            <label for="input">INPUT </label>
+                            <select stylename="input" id="input">
+                                <option value="ACCEPT" <?php if($chain[0][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
+                                <option value="DROP" <?php if($chain[0][1]==="DROP") echo "selected";?>>DROP</option>
+                                <option value="REJECT" <?php if($chain[0][1]==="REJECT") echo "selected";?>>REJECT</option>
+                            </select><br><br>
+                          </div>
+                          <div class="row align-self-end p-2 bd-highlight">
+                            <label for="forward">FORWARD </label>
+                            <select name="forward" id="forward">
+                                <option value="ACCEPT" <?php if($chain[1][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
+                                <option value="DROP" <?php if($chain[1][1]==="DROP") echo "selected";?>>DROP</option>
+                                <option value="REJECT" <?php if($chain[1][1]==="REJECT") echo "selected";?>>REJECT</option>
+                            </select><br><br>
+                          </div>
+                          <div class="row align-self-end p-2 bd-highlight">
+                            <label for="output">OUTPUT </label>
+                            <select name="output" id="output" value=<?php echo trim($chain[2][1]);?>>
+                                <option value="ACCEPT" <?php if($chain[2][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
+                                <option value="DROP" <?php if($chain[2][1]==="DROP") echo "selected";?>>DROP</option>
+                                <option value="REJECT" <?php if($chain[2][1]==="REJECT") echo "selected";?>>REJECT</option>
+                            </select><br><br>
+                          </div>
+                          <div class="row align-self-end p-5 bd-highlight">
+                            <input class="float-end btn btn-success" type="submit" value="Modifier"/>
+                          </div>
                         </form>
                     </div>
                   </div>

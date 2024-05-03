@@ -155,12 +155,12 @@ main {
 }
 
 .policy {
-  width: 80vw;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
-  background-color: transparent;
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: rgb(206, 201, 201);
 }
