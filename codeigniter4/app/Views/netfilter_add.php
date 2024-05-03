@@ -13,6 +13,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="../css/netfilter_add.css" />
   </head>
   <body>
@@ -87,22 +88,22 @@
 
                         <input type="checkbox" name="port" id="check_port" class="checkbox" /><label for="check_port">Port</label><br>
                         <div class="port">
-                            <input type="text" name="p" id="p" class="input" placeholder="80,443..." pattern="[0-9,]+"/>
+                            <input type="text" class="form-control" name="p" id="p" class="input" placeholder="80,443..." pattern="[0-9,]+"/>
                         </div>
 
                         <input type="checkbox" name="check_mac" id="check_mac" class="checkbox"/><label for="check_mac">Mac</label><br>
                         <div class="mac">
-                            <input type="text" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-z:]+"/><br>
+                            <input type="text" class="form-control" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-z:]+"/><br>
                         </div>
 
                         <input type="checkbox" name="check_source" id="check_source" class="checkbox"/><label for="check_source">Source</label><br>
                         <div class="source">
-                            <input type="text" name="source" class="input" placeholder="www.google.com ou X.X.X.X(IP)"/><br>
+                            <input type="text" class="form-control" name="source" class="input" placeholder="www.google.com ou X.X.X.X(IP)"/><br>
                         </div>
 
                         <input type="checkbox" name="check_destination" id="check_destination" class="checkbox"/><label for="check_destination">Déstionation</label><br>
                         <div class="destination">
-                            <input type="text" name="destination" class="input" placeholder="www.google.com ou X.X.X.X(IP)"/><br>
+                            <input type="text" class="form-control" name="destination" class="input" placeholder="www.google.com ou X.X.X.X(IP)"/><br>
                         </div>
 
                         <input type="checkbox" name="check_interface_source" id="check_interface_source" class="checkbox"/><label for="check_interface_source">Interface Source</label><br>

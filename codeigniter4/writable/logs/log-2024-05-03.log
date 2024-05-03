@@ -100,3 +100,27 @@ in APPPATH/Views/specific.php on line 86.
  9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-03 08:51:39 --> ErrorException: include(/home/njiva/git/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php): Failed to open stream: Permission denied
+[Method: GET, Route: netfilter/police]
+in SYSTEMPATH/View/View.php on line 234.
+ 1 SYSTEMPATH/View/View.php(234): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include()
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(62): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+WARNING - 2024-05-03 08:52:39 --> [DEPRECATED] strlen(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Models/Net.php on line 211.
+ 1 APPPATH/Models/Net.php(211): strlen(null)
+ 2 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->modifierSubnet(null, null, null, null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dhcp))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/njiva/git/dhcp-iptables/codeigniter4/public/index.php')
