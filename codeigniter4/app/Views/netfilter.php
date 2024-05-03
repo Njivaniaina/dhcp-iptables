@@ -13,13 +13,13 @@
   </head>
   <body>
     <header>
-        <div class="logo" id="btn-menu">
+        <div class="logo" id="btn-menu"></a>
             <i class="bx bx-menu menu-icon"></i>
         </div>
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
-        <a href=""><button class="button"></button></a>
+        <button class="button"></button></a>
     </header>
     
     <nav>

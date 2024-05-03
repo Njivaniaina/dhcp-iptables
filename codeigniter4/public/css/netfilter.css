@@ -7,7 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url(../assets/acceuil.jpg);
+  background-image: url(../assets/accueil.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -25,7 +25,7 @@ header {
   height: 70px;
   background:#ece6e6b8;
   text-align: center;
-  box-shadow: 0 0 0 0.75px black;
+  box-shadow: 0 0 0.75px black;
 }
 
 h1 {
