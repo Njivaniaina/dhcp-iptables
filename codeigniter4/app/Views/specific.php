@@ -97,9 +97,6 @@
     <?php else : ?>
         <h2 style="margin:4vw;">Aucune machine fixer pour l'instant</h2>
     <?php endif; ?>
-    <form action='./create' method='get'>
-        <button type="submit" class='btn btn-primary'>Fixer l'ip de'une nouvelle machine</button>
-    </form>
     </div>
     <script src="./js/script.js"></script>
   </body>
