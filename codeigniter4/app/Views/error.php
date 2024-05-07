@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>error adding</title>
-        <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 
     </head>
     <body>
