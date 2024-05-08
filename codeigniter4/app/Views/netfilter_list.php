@@ -20,7 +20,7 @@
   <body>
     <header>
         <div class="logo" id="btn-menu">
-            <i class="bx bx-menu menu-icon"></i>
+        <i class="bx menu-icon"><img src="/assets/menu.svg" alt="menu"></i>
         </div>
         <div class="title">
             <h1>NETFILTER</h1>
