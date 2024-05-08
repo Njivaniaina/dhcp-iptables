@@ -81,7 +81,7 @@
                     <input type="hidden" name="level" id="level" value="all"/>
                     <div class="row align-self-end p-2 bd-highlight">
                       <label for="input">INPUT </label>
-                      <select class="form-select form-select-lg" stylename="input" id="input">
+                      <select class="form-select form-select-lg" name="input" id="input">
                           <option value="ACCEPT" <?php if($chain[0][1]==="ACCEPT") echo "selected";?>>ACCEPT</option>
                           <option value="DROP" <?php if($chain[0][1]==="DROP") echo "selected";?>>DROP</option>
                           <option value="REJECT" <?php if($chain[0][1]==="REJECT") echo "selected";?>>REJECT</option>

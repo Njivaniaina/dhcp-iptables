@@ -32,7 +32,7 @@ class Netfilter extends BaseController
             if(empty($ruleForward))
                 exec($defaultForward);
         
-            $cmd = "sudo iptables -S FORWARD ".$line;
+            $cmd = "sudo iptables -S OUTPUT ".$line;
             exec($cmd, $ruleOutput);
             if(empty($ruleOutput))
                 exec($defaultOutput);
@@ -86,15 +86,15 @@ class Netfilter extends BaseController
         
         if($level == "all")
             $this->changePolice();                  // Global  iptables -P
-        elseif($level == "l1")
+        if($level == "l1")
             $this->changePoliceL1();
-        elseif($level == "l2")
+        if($level == "l2")
             $this->changePoliceL2();
-        elseif($level == "l3")
+        if($level == "l3")
             $this->changePoliceL3();
-        elseif($level == "m1")
+        if($level == "m1")
             $this->changePoliceM1();
-        elseif($level == "m2")
+        if($level == "m2")
             $this->changePoliceM2();
         
         $data = $tables->get_table_csv();
