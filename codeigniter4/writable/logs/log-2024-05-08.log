@@ -1,0 +1,128 @@
+CRITICAL - 2024-05-08 10:51:09 --> Error: Undefined constant "App\Controllers\this"
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 10:51:41 --> ArgumentCountError: exec() expects at least 1 argument, 0 given
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 18.
+ 1 APPPATH/Controllers/Netfilter.php(18): exec()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 10:51:56 --> Error: Undefined constant "App\Controllers\ls"
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 18.
+ 1 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 10:53:23 --> ErrorException: Array to string conversion
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 19.
+ 1 APPPATH/Controllers/Netfilter.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 10:54:10 --> Error: Call to undefined function App\Controllers\print_ln()
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 19.
+ 1 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 10:58:00 --> ErrorException: Undefined array key 1
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 19.
+ 1 APPPATH/Controllers/Netfilter.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:20:27 --> ErrorException: Undefined variable $line
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 42.
+ 1 APPPATH/Controllers/Netfilter.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:21:24 --> ErrorException: Undefined array key 1
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 44.
+ 1 APPPATH/Controllers/Netfilter.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:22:28 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 44.
+ 1 APPPATH/Controllers/Netfilter.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:22:31 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 44.
+ 1 APPPATH/Controllers/Netfilter.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:22:32 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 44.
+ 1 APPPATH/Controllers/Netfilter.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-08 11:23:34 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 44.
+ 1 APPPATH/Controllers/Netfilter.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()

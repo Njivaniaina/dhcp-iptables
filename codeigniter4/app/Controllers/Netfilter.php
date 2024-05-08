@@ -9,7 +9,35 @@ class Netfilter extends BaseController
     # Pour le page d'accueil
     public function index(): string
     {
+        $this->levelPolicyCheck();
         return view('netfilter');
+    }
+
+    public function levelPolicyCheck():void{
+
+        $defaultInput = "sudo iptables -A INPUT -p tcp -j ACCEPT";
+        $defaultForward = "sudo iptables -A FORWARD -p tcp -j ACCEPT";
+        $defaultOutput = "sudo iptables -A OUTPUT -p tcp -j ACCEPT";
+
+        for($line = 1 ; $line < 6; $line++)
+        {
+
+            $cmd = "sudo iptables -S INPUT ".$line;
+            exec($cmd, $ruleInput);
+            if(empty($ruleInput))
+                exec($defaultInput);
+
+            $cmd = "sudo iptables -S FORWARD ".$line;
+            exec($cmd, $ruleForward);
+            if(empty($ruleForward))
+                exec($defaultForward);
+        
+            $cmd = "sudo iptables -S FORWARD ".$line;
+            exec($cmd, $ruleOutput);
+            if(empty($ruleOutput))
+                exec($defaultOutput);
+
+        }
     }
 
     public function error($msg): string {
@@ -54,8 +82,21 @@ class Netfilter extends BaseController
     # Pour la page a propos 
     public function police(): string {
         $tables  = new Iptables();
-
-        $this->changePolice();
+        $level = $this->request->getVar("level");
+        
+        if($level == "all")
+            $this->changePolice();                  // Global  iptables -P
+        elseif($level == "l1")
+            $this->changePoliceL1();
+        elseif($level == "l2")
+            $this->changePoliceL2();
+        elseif($level == "l3")
+            $this->changePoliceL3();
+        elseif($level == "m1")
+            $this->changePoliceM1();
+        elseif($level == "m2")
+            $this->changePoliceM2();
+        
         $data = $tables->get_table_csv();
         $d['rules'] = $data;
 
@@ -375,9 +416,110 @@ class Netfilter extends BaseController
         if(isset($output)) {
             $command_output = "sudo iptables -P OUTPUT " . $output;
             exec($command_output);
+        }  
+    }
+
+    public function changePoliceL1(): void {
+        $input = $this->request->getVar("input");
+        if(isset($input)) {
+            $command_input = "sudo iptables -R INPUT 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $input;
+            exec($command_input);
+        }
+
+        $forward = $this->request->getVar("forward");
+        if(isset($forward)) {
+            $command_forward = "sudo iptables -R FORWARD 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $forward;
+            exec($command_forward);
+        }
+
+        $output = $this->request->getVar("output");
+        if(isset($output)) {
+            $command_output = "sudo iptables -R OUTPUT 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $output;
+            exec($command_output);
         }
     }
 
+    public function changePoliceL2(): void {
+        $input = $this->request->getVar("input");
+        if(isset($input)) {
+            $command_input = "sudo iptables -R INPUT 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $input;
+            exec($command_input);
+        }
+
+        $forward = $this->request->getVar("forward");
+        if(isset($forward)) {
+            $command_forward = "sudo iptables -R FORWARD 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $forward;
+            exec($command_forward);
+        }
+
+        $output = $this->request->getVar("output");
+        if(isset($output)) {
+            $command_output = "sudo iptables -R OUTPUT 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $output;
+            exec($command_output);
+        }
+    }
+
+    public function changePoliceL3(): void {
+        $input = $this->request->getVar("input");
+        if(isset($input)) {
+            $command_input = "sudo iptables -R INPUT 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $input;
+            exec($command_input);
+        }
+
+        $forward = $this->request->getVar("forward");
+        if(isset($forward)) {
+            $command_forward = "sudo iptables -R FORWARD 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $forward;
+            exec($command_forward);
+        }
+
+        $output = $this->request->getVar("output");
+        if(isset($output)) {
+            $command_output = "sudo iptables -R OUTPUT 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $output;
+            exec($command_output);
+        }
+    }
+
+    public function changePoliceM1(): void {
+        $input = $this->request->getVar("input");
+        if(isset($input)) {
+            $command_input = "sudo iptables -R INPUT 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $input;
+            exec($command_input);
+        }
+
+        $forward = $this->request->getVar("forward");
+        if(isset($forward)) {
+            $command_forward = "sudo iptables -R FORWARD 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $forward;
+            exec($command_forward);
+        }
+
+        $output = $this->request->getVar("output");
+        if(isset($output)) {
+            $command_output = "sudo iptables -R OUTPUT 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $output;
+            exec($command_output);
+        }
+    }
+
+    public function changePoliceM2(): void {
+        $input = $this->request->getVar("input");
+        if(isset($input)) {
+            $command_input = "sudo iptables -R INPUT 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $input;
+            exec($command_input);
+        }
+
+        $forward = $this->request->getVar("forward");
+        if(isset($forward)) {
+            $command_forward = "sudo iptables -R FORWARD 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $forward;
+            exec($command_forward);
+        }
+
+        $output = $this->request->getVar("output");
+        if(isset($output)) {
+            $command_output = "sudo iptables -R OUTPUT 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $output;
+            exec($command_output);
+        }
+    }
+
+    
     private function saveTables(): void {
         $command = 'sudo iptables-save';
         exec($command);
