@@ -134,7 +134,7 @@ main {
 */
 
 .content {
-  margin: auto auto;
+  margin: 50px;
 }
 
 .content-item {
@@ -156,6 +156,7 @@ main {
 
 .element {
   min-height: 30vh;
+  margin-bottom: 50px;
   width: 90vw;
 }
 
