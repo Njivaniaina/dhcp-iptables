@@ -35,29 +35,30 @@ class Iptables {
             if(strlen($ligne) > 0){
                 $mot = explode(" ", trim($ligne));
                 $mot = array_filter($mot);
-                
-                if(count($mot)>0)
-                {
-                    if($mot[0] == "Chain"){
-                        unset($mot[0]);
-                        unset($mot[2]);
-                        $mot[3] = substr($mot[3], 0, strlen($mot[3])-1);
-                        file_put_contents("iptables.csv", $mot[1] . "," . $mot[3] . "\n", FILE_APPEND);
-                    }
 
-                    if(isset($mot[0]) && $mot[0] != "target") 
-                    {
-                        foreach ($mot as $k => $m) 
-                        {
-                        file_put_contents("iptables.csv", $m . ",", FILE_APPEND);
-                        }
-                        file_put_contents("iptables.csv", "\n", FILE_APPEND);    
-                    }
+            if(count($mot)>0)
+            {
+                if($mot[0] == "Chain"){
+                    unset($mot[0]);
+                    unset($mot[2]);
+                    $mot[3] = substr($mot[3], 0, strlen($mot[3])-1);
+                    file_put_contents("iptables.csv", $mot[1] . "," . $mot[3] . "\n", FILE_APPEND);
+
                 }
+
+                elseif(isset($mot[0]) && $mot[0] != "target")   // INPUT
+                {
+                    foreach ($mot as $k => $m)
+                    {
+                        file_put_contents("iptables.csv", $m . ",", FILE_APPEND);
+                    }
+                    file_put_contents("iptables.csv", "\n", FILE_APPEND);
+                }
+            }
 
             }
         }
-        exec("rm iptables.txt");
+        //exec("rm iptables.txt");
     }
 
     public function get_table_csv(): array {
@@ -65,28 +66,63 @@ class Iptables {
 
         $file = fopen("./iptables.csv", "r") or die("Erreur de l'ouverture du fichier ./iptables.csv");
         $result = array();
+        $idChain = -1;         // 0 -> INPUT  | 1 -> FORWARD | 2 -> OUTPUT
+        $idLevel = 0;           // 1 -> L1  | 2 -> L2 | 3 -> L3 | 4 -> M1  | 5 -> M2
 
         while(($lines = fgetcsv($file, 1000, ","))) {
-            if(count($lines) == 2) {
+            if(count($lines) == 2) {            // chain changement
                 $c = $lines[0];
-                $chain[] = $lines;
+                $chainAll[] = $lines;          // $lines[0] = chain  $lines[1] = target
+                $idChain++;
+                $idLevel = 1;
             }
             else {
                 if(count($lines) > 6) {
                     for($i=6;$i<count($lines);$i++) {
                         $lines[5]  = $lines[5] . " " . $lines[$i];
                     }
-                    $result[$c][] = $lines;  
+                    $result[$c][] = $lines;
                 }
                 else {
-                    $result[$c][] = $lines;  
+                    $result[$c][] = $lines;
                 }
             }
+
+            if(($idLevel == 1) && count($lines) > 2){
+
+                $chainL1[$idChain][1] = $lines[0];
+                $idLevel++;
+            }
+
+            elseif(($idLevel == 2) && count($lines) > 2){
+
+                $chainL2[$idChain][1] = $lines[0];
+                $idLevel++;
+            }
+
+            elseif(($idLevel == 3) && count($lines) > 2){
+
+                $chainL3[$idChain][1] = $lines[0];
+                $idLevel++;
+            }
+
+            elseif(($idLevel == 4) && count($lines) > 2){
+
+                $chainM1[$idChain][1] = $lines[0];
+                $idLevel++;
+            }
+
+            elseif(($idLevel == 5) && count($lines) > 2){
+
+                $chainM2[$idChain][1] = $lines[0];
+                $idLevel++;
+            }
+
         }
         fclose($file);
-        exec("rm iptables.csv");
+        //exec("rm iptables.csv");
 
-        return array("chain" => $chain, "rules" => $result);
+        return array("chain" => $chainAll, "chainL1" => $chainL1, "chainL2" => $chainL2, "chainL3" => $chainL3, "chainM1" => $chainM1, "chainM2" => $chainM2, "rules" => $result);
     }
 
     ###########################################
@@ -142,5 +178,5 @@ class Iptables {
         $numero += 1;
         $command = "sudo iptables -D " . $chain . " " . $numero;
         exec($command);
-    }    
+    }
 }
