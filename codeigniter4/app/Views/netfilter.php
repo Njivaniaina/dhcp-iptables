@@ -19,7 +19,6 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
-        <button class="button"></button></a>
     </header>
     
     <nav>
@@ -30,7 +29,7 @@
 			  	<li class="list">
                   <a href="/" class="nav-link">
                     <span class="link">
-						<div class="img">⌂</div>
+						<bdi>⌂</bdi>&ensp;Main menu
 					</span>
                   </a>
                 </li>
