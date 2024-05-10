@@ -918,3 +918,176 @@ in APPPATH/Models/Net.php on line 288.
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
 11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
 >>>>>>> 358c71ef18310709ae92ea8403fea305a0122aba
+CRITICAL - 2024-05-10 11:30:01 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 32.
+ 1 APPPATH/Controllers/Netfilter.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:30:26 --> Error: Cannot use [] for reading
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 32.
+ 1 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:30:36 --> TypeError: strpos(): Argument #1 ($haystack) must be of type string, array given
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 32.
+ 1 APPPATH/Controllers/Netfilter.php(32): strpos()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:31:53 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 34.
+ 1 APPPATH/Controllers/Netfilter.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:53:51 --> Error: Call to undefined function App\Controllers\shell_exechell_exec()
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 41.
+ 1 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:59:22 --> ErrorException: Undefined variable $chain
+[Method: GET, Route: netfilter/list]
+in APPPATH/Models/Iptables.php on line 125.
+ 1 APPPATH/Models/Iptables.php(125): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(64): App\Models\Iptables->get_table_csv()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->list()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 11:59:47 --> ErrorException: Undefined variable $chainL1
+[Method: GET, Route: netfilter/list]
+in APPPATH/Models/Iptables.php on line 125.
+ 1 APPPATH/Models/Iptables.php(125): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(64): App\Models\Iptables->get_table_csv()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->list()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:08:25 --> ErrorException: Undefined array key "chainAll"
+[Method: GET, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 72.
+ 1 APPPATH/Views/netfilter_police.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:12:13 --> ErrorException: Undefined array key "chainAll"
+[Method: GET, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 72.
+ 1 APPPATH/Views/netfilter_police.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:13:05 --> ErrorException: Undefined variable $chain
+[Method: GET, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 93.
+ 1 APPPATH/Views/netfilter_police.php(93): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:13:23 --> ErrorException: Undefined array key "chainAll"
+[Method: GET, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 2.
+ 1 APPPATH/Views/netfilter_police.php(2): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:49:49 --> ErrorException: Undefined variable $chain
+[Method: POST, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 134.
+ 1 APPPATH/Views/netfilter_police.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:50:32 --> ErrorException: Undefined variable $cchainAllhain
+[Method: POST, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 144.
+ 1 APPPATH/Views/netfilter_police.php(144): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-10 12:50:47 --> ErrorException: Undefined variable $chain
+[Method: POST, Route: netfilter/police]
+in APPPATH/Views/netfilter_police.php on line 149.
+ 1 APPPATH/Views/netfilter_police.php(149): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/mick/github/dhcp-iptables/codeigniter4/app/Views/netfilter_police.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Netfilter.php(103): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->police()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
