@@ -35,7 +35,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="/netfilter" class="nav-link">
+                  <a href="#" class="nav-link">
                     <span class="link">Home</span>
                   </a>
                 </li>

@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="/netfilter/add" class="nav-link">
+                  <a href="#" class="nav-link">
                     <span class="link">Add</span>
                   </a>
                 </li>

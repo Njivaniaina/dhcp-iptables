@@ -29,11 +29,6 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
-        <div class="save">
-          <a href="/netfilter/list?save=t">
-            <button>Save</button>
-          </a>
-        </div>
     </header>
 
     <nav>
@@ -47,7 +42,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="/netfilter/list" class="nav-link">
+                  <a href="#" class="nav-link">
                     <span class="link">List</span>
                   </a>
                 </li>
