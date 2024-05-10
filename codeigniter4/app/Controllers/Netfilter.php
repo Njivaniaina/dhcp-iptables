@@ -332,10 +332,11 @@ class Netfilter extends BaseController
         if(isset($check_source)){
             //$command = $this->checkS($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
             
-            if($chain != "INPUT")
-                return $this->error("can not be OUTPUT or FORWARD");
+            // if($chain != "INPUT")
+            //     return $this->error("can not be OUTPUT or FORWARD");
 
-            if($chain == "INPUT" && !isset($check_mac) && isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
+            // $chain == "INPUT" &&
+            if(!isset($check_mac) && isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             {
                 $source = $this->request->getVar("source");
                 try{
@@ -368,10 +369,11 @@ class Netfilter extends BaseController
         if(isset($check_destination)){
             //$command = $this->checkD($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
          
-            if($chain != "OUTPUT")
-                return $this->error("can not be INPUT or FORWARD");
+            // if($chain != "OUTPUT")
+            //     return $this->error("can not be INPUT or FORWARD");
 
-            if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_source) && isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
+            // $chain == "OUTPUT" &&
+            if(!isset($check_mac) && !isset($check_source) && isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             { 
                 $destination = $this->request->getVar("destination");
                 try{

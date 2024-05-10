@@ -58,7 +58,7 @@ class Iptables {
 
             }
         }
-        //exec("rm iptables.txt");
+        exec("rm iptables.txt");
     }
 
     public function get_table_csv(): array {
@@ -120,7 +120,7 @@ class Iptables {
 
         }
         fclose($file);
-        //exec("rm iptables.csv");
+        exec("rm iptables.csv");
 
         return array("chain" => $chainAll, "chainL1" => $chainL1, "chainL2" => $chainL2, "chainL3" => $chainL3, "chainM1" => $chainM1, "chainM2" => $chainM2, "rules" => $result);
     }

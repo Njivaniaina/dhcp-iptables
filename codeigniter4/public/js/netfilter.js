@@ -30,29 +30,7 @@ page_all.addEventListener('click', () => {
     page_m2.classList.remove('page-actif');
 
     level.setAttribute("value", "all");
-<<<<<<< HEAD
     title.innerText = "The Policy";
-=======
-    title.innerText = "The Policy All";
-
-    const data = dataAll;
-
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
-
->>>>>>> 339f790dd8d7b63dc7c810f896225322824e46f2
 });
 page_l1.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
@@ -64,23 +42,6 @@ page_l1.addEventListener('click', () => {
 
     level.setAttribute("value", "l1");
     title.innerText = "The Policy L1";
-
-    const data = dataL1;
-
-
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
 });
 page_l2.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
@@ -92,23 +53,6 @@ page_l2.addEventListener('click', () => {
 
     level.setAttribute("value", "l2");
     title.innerText = "The Policy L2";
-
-    const data = dataL2;
-
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-    
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
 });
 page_l3.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
@@ -120,26 +64,6 @@ page_l3.addEventListener('click', () => {
 
     level.setAttribute("value", "l3");
     title.innerText = "The Policy L3";
-
-    const data = dataL3;
-
-
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-    
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
-
-
 });
 page_m1.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
@@ -151,25 +75,6 @@ page_m1.addEventListener('click', () => {
 
     level.setAttribute("value", "m1");
     title.innerText = "The Policy M1";
-
-    const data = dataM1;
-
-    
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-    
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
-
 });
 page_m2.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
@@ -181,22 +86,4 @@ page_m2.addEventListener('click', () => {
 
     level.setAttribute("value", "m2");
     title.innerText = "The Policy M2";
-
-
-    const data = dataM2;
-
-    containerInput.innerHTML = "";
-    containerForward.innerHTML = "";
-    containerOutput.innerHTML = "";
-
-
-    const tabRule = ["ACCEPT" , "DROP" , "REJECT"];
-    
-
-    for(let rule of tabRule){
-        containerInput.innerHTML += rule === data[0].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;      
-        containerForward.innerHTML += rule === data[1].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-        containerOutput.innerHTML += rule === data[2].innerText ? `<option value=${rule} selected>${rule}</option>` : `<option value=${rule}>${rule}</option>`;
-    }
-    
 });
