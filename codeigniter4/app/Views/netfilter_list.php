@@ -26,13 +26,13 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
-        <!-- <div class="save">
+        <div class="save">
           <a href="/netfilter/list?save=t">
             <button>Save</button>
           </a>
-        </div> -->
+        </div>
     </header>
-    
+
     <nav>
         <div class="sidebar">
             <div></div>
