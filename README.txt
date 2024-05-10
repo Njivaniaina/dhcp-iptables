@@ -1,9 +1,9 @@
-Cette une projet en codeigniter qui peut gérer les services: 
+C'est un projet en codeigniter qui peut gérer les services: 
   -> DHCP
   -> Netfilter
 
 Les contributeurs
-// Dans le fichier Participant.odt
+// Dans le fichier Participant.csv
 
 INSTALL
   Pour faire l'usage de cette application web, on doit d'abord configurer certaine de notre configuration dans le système.

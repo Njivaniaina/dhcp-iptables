@@ -27,6 +27,13 @@
             <div></div>
             <div class="sidebar-content">
               <ul class="lists">
+			  	<li class="list">
+                  <a href="/" class="nav-link">
+                    <span class="link">
+						<div class="img">⌂</div>
+					</span>
+                  </a>
+                </li>
                 <li class="list">
                   <a href="/netfilter" class="nav-link">
                     <span class="link">Home</span>
@@ -55,14 +62,12 @@
     
 
     <main>
-      <div class="content">
-          <div class="content-item">
-              <h1>Welcome</h1>
-              <div class="context">
-                  <p>With our platform , you can easily customize your iptables rules for optimal security and performance.</p><br>
-            </div>
-          </div>
-          <div class="image"> </div>
+	  <div class='main-left'>
+		  <h1 class="head">WELCOME</h1>
+	      <h1>With our platform , you can easily customize your iptables rules for optimal security and performance.</h1>
+	  </div>
+	  <div class='main-right'>
+          <img src="./assets/firewall.png" alt="">  
       </div>
     </main>
 

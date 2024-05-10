@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 WARNING - 2024-05-10 07:26:49 --> [DEPRECATED] strlen(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Models/Net.php on line 211.
  1 APPPATH/Models/Net.php(211): strlen(null)
  2 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->modifierSubnet(null, null, null, null)
@@ -738,3 +739,182 @@ WARNING - 2024-05-10 10:20:33 --> [DEPRECATED] strlen(): Passing null to paramet
  7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/tsanta/Documents/dhcp-iptables/codeigniter4/public/index.php')
+=======
+CRITICAL - 2024-05-10 04:56:30 --> ErrorException: Undefined variable $defaultInput
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 28.
+ 1 APPPATH/Controllers/Netfilter.php(28): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:03:50 --> ValueError: exec(): Argument #1 ($command) cannot be empty
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 31.
+ 1 APPPATH/Controllers/Netfilter.php(31): exec()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->levelPolicyCheck()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:12:33 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: No such file or directory
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 92.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(92): fopen()
+ 3 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:14:46 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:17:40 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:18:01 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:21:07 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:21:36 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:22:00 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:25:44 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:27:30 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:27:32 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+CRITICAL - 2024-05-10 05:29:39 --> ErrorException: fopen(/etc/dhcp/dhcpd.conf): Failed to open stream: Permission denied
+[Method: GET, Route: globale]
+in APPPATH/Models/Net.php on line 288.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Models/Net.php(288): fopen()
+ 3 APPPATH/Models/Net.php(111): App\Models\Net->addSubnet()
+ 4 APPPATH/Controllers/Dhcp.php(18): App\Models\Net->getSubnet()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
+>>>>>>> 358c71ef18310709ae92ea8403fea305a0122aba

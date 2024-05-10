@@ -26,7 +26,14 @@
             <div></div>
             <div class="sidebar-content">
               <ul class="lists">
-              <li class="list">
+			    <li class="list">
+                  <a href="/" class="nav-link">
+                    <span class="link">
+						<div class="img">⌂</div>
+					</span>
+                  </a>
+                </li>
+                <li class="list">
                   <a href="#" class="nav-link">
                     <span class="link">Home</span>
                   </a>
@@ -51,11 +58,11 @@
     
 
     <main>
-    <div class='main-right'>
+    <div class='main-left'>
           <img src="./assets/Dchp.svg" alt="">  
       </div> 
-    <div class='main-left'>
-        <h1>Bienvenue , vous pouvez configurer ici la DHCP globale et la DHCP spédifique pour chaque machine</h1>
+    <div class='main-right'>
+        <h1>Bienvenue , vous pouvez configurer ici la DHCP globale et la DHCP spécifique pour chaque machine</h1>
       </div>
      
     </main>
