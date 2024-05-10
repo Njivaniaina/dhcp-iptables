@@ -60,7 +60,7 @@
     <main>
         <div class="content">
             <div class="content-item">
-                <h1>Add one rules</h1>
+                <h1>Add a rule</h1>
                 <div class="formulaire">
                     <form action="./addData" method="post">
                         <label for="chain" class="subhead">Chain</label><br>

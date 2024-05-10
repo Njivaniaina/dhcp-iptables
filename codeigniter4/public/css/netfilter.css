@@ -7,7 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url(../assets/accueil.jpg);
+  background-color: #ece6e6b8;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -23,12 +23,12 @@ body {
 header {
   width: 100%;
   height: 70px;
-  background:#ece6e6b8;
+  background:#fff;
   text-align: center;
   box-shadow: 0 0 0.75px black;
 }
 
-h1 {
+header h1 {
   letter-spacing: 10px;
 }
 header .logo .menu-icon {
@@ -134,74 +134,27 @@ nav.open ~ .overlay {
   left: 260px;
   pointer-events: auto;
 }
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+main .main-left{
 
-main {
-  width: 100%;
-  height: 100vh;
+	text-align: center; 
+	padding: 5vw;
+	letter-spacing: 3px;
 }
 
-/*
-  Pour le css de l'acceuil de netfilter
-*/
-
-.content {
-  margin: 100px 100px;
+main .main-right{
+	padding: 2vw;
+	img{
+		width: 30vw;
+	}
 }
 
-.content-item {
-  position: relative;
-  left: 10vw;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.content-item h1 {
-  color: rgb(0, 0, 0);
-  font-size: 3em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.content-item h1:hover{
-  color: #820f15;
-}
-
-.context {
-  margin: 10vh 30vw;
-  font-size: 1.3em;
-  position: relative;
-  right: 30vw;
-}
-
-.content a {
-  padding: 15px;
-  font-size: 1.5em;
-  background-color: #324151;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 10px;
-  color: white;
-}
-.image {
-  background-image: url("../assets/netfilter.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 350px;
-  height: 250px;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  bottom: 40vw;
-  left: 50vw;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.image:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+div.img{
+	font-size: 2em;
 }
