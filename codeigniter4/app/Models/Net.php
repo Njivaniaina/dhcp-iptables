@@ -9,22 +9,14 @@ class DHCPError
 
     }
 
-    public function test_mac($mac)
-    {
-        //verifier si tout les champs d une addresse mac sont tout des hexadecimales
-        $tab_hex = explode(":",$mac);
-        if(count($tab_hex) != 6)
-        {
-            return 0;
+    public function test_mac($adresse) {
+        $regex = '/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/';
+        
+           if (preg_match($regex, $adresse)) {
+            return true;
+        } else {
+            return false;
         }
-        foreach($tab_hex as $element)
-        {
-            if(!($this->sumAscii($element) >= 96 && $this->sumAscii($element) <= 204))
-            {
-                return 0;
-            }
-        }
-        return 1;
     }
 
     public function test_ip($ip)

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO APP</title>
+    <title>DHCP</title>
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./css/dhcp.css" />
   </head>
-  <body>
+  <body">
     <header>
         <div class="logo" id="btn-menu">
             <i class="bx bx-menu menu-icon"></i>
@@ -55,16 +55,18 @@
             </div>
             <div class="form-group m-2">
                 <label for="startRange" class="m-2">Adresse mac</label>
-                <input type="text" class="form-control" name="mac" id="startRange" placeholder="" value=<?=$modifier['mac']?>>
+                <input type="text" class="form-control" name="mac" id="mac" placeholder="" value=<?=$modifier['mac']?>>
             </div>
             <div class="form-group m-2">
                 <label for="startRange" class="m-2">Adresse ip</label>
-                <input type="text" class="form-control" name="ip" id="startRange" placeholder="" value=<?=$modifier['ip']?> >
+                <input type="text" class="form-control" name="ip" id="ip" placeholder="" value=<?=$modifier['ip']?> >
             </div>
             <button type='submit' class='btn btn-dark m-4'>Fixer</button>
         </form>
         <h4 style='margin:10px;'>Voici la liste des machines avec les IP fixés</h4>
-    <?php if (!empty($host)) : ?>
+    </div>
+    <div class='container-sm'>
+      <?php if (!empty($host)) : ?>
         <table class="table table-dark table-striped">
         <thead>
             <tr>
@@ -97,7 +99,35 @@
     <?php else : ?>
         <h2 style="margin:4vw;">Aucune machine fixer pour l'instant</h2>
     <?php endif; ?>
+    <div class='container'>
+     <button type="button" class='btn btn-primary' id='btn-print'>Imprimer</button>
     </div>
+    </div>
+    
+    <script>
+        const mac = document.querySelector("#mac");
+        const ip = document.querySelector('#ip');
+
+        mac.addEventListener("input", (e) => {
+          var regex = /^([0-9A-Fa-f]{2}[:-]){0,5}([0-9A-Fa-f]{0,2})$/;
+          var valid = regex.test(e.target.value);
+          var parts = e.target.value.split(/[:-]/);
+  
+          if (!valid || parts.some(part => part.length > 2)) {
+            e.target.value = e.target.value.substring(0, e.target.value.length - 1);
+          }
+        });
+
+        ip.addEventListener('input' , (e) => {
+          const re = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){0,3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)?$/;
+            if (!re.test(ip.value)) {
+              const octets = ip.value.split('.').map(Number);
+              ip.value = ip.value.substring(0, ip.value.length - 1);  
+            }
+        })
+
+    </script>
+
     <script src="./js/script.js"></script>
   </body>
 </html>

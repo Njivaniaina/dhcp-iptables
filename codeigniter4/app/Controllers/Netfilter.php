@@ -422,19 +422,19 @@ class Netfilter extends BaseController
     public function changePoliceL1(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
-            $command_input = "sudo iptables -R INPUT 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $input;
+            $command_input = "sudo iptables -R INPUT 1 -m iprange --src-range 192.168.1.1-192.168.1.32 -j " . $input;
             exec($command_input);
         }
 
         $forward = $this->request->getVar("forward");
         if(isset($forward)) {
-            $command_forward = "sudo iptables -R FORWARD 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $forward;
+            $command_forward = "sudo iptables -R FORWARD 1 -m iprange --src-range 192.168.1.1-192.168.1.32 -j " . $forward;
             exec($command_forward);
         }
 
         $output = $this->request->getVar("output");
         if(isset($output)) {
-            $command_output = "sudo iptables -R OUTPUT 1 -m iprange --src-range 192.168.1.10-192.168.1.80 -j " . $output;
+            $command_output = "sudo iptables -R OUTPUT 1 -m iprange --src-range 192.168.1.1-192.168.1.32 -j " . $output;
             exec($command_output);
         }
     }
@@ -442,19 +442,19 @@ class Netfilter extends BaseController
     public function changePoliceL2(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
-            $command_input = "sudo iptables -R INPUT 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $input;
+            $command_input = "sudo iptables -R INPUT 2 -m iprange --src-range 192.168.1.34-192.168.1.62 -j " . $input;
             exec($command_input);
         }
 
         $forward = $this->request->getVar("forward");
         if(isset($forward)) {
-            $command_forward = "sudo iptables -R FORWARD 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $forward;
+            $command_forward = "sudo iptables -R FORWARD 2 -m iprange --src-range 192.168.1.34-192.168.1.62 -j " . $forward;
             exec($command_forward);
         }
 
         $output = $this->request->getVar("output");
         if(isset($output)) {
-            $command_output = "sudo iptables -R OUTPUT 2 -m iprange --src-range 192.168.1.81-192.168.1.150 -j " . $output;
+            $command_output = "sudo iptables -R OUTPUT 2 -m iprange --src-range 192.168.1.34-192.168.1.62 -j " . $output;
             exec($command_output);
         }
     }
@@ -462,19 +462,19 @@ class Netfilter extends BaseController
     public function changePoliceL3(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
-            $command_input = "sudo iptables -R INPUT 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $input;
+            $command_input = "sudo iptables -R INPUT 3 -m iprange --src-range 192.168.1.64-192.168.1.96 -j " . $input;
             exec($command_input);
         }
 
         $forward = $this->request->getVar("forward");
         if(isset($forward)) {
-            $command_forward = "sudo iptables -R FORWARD 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $forward;
+            $command_forward = "sudo iptables -R FORWARD 3 -m iprange --src-range 192.168.1.64-192.168.1.96 -j " . $forward;
             exec($command_forward);
         }
 
         $output = $this->request->getVar("output");
         if(isset($output)) {
-            $command_output = "sudo iptables -R OUTPUT 3 -m iprange --src-range 192.168.1.151-192.168.1.220 -j " . $output;
+            $command_output = "sudo iptables -R OUTPUT 3 -m iprange --src-range 192.168.1.64-192.168.1.96 -j " . $output;
             exec($command_output);
         }
     }
@@ -482,19 +482,19 @@ class Netfilter extends BaseController
     public function changePoliceM1(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
-            $command_input = "sudo iptables -R INPUT 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $input;
+            $command_input = "sudo iptables -R INPUT 4 -m iprange --src-range 192.168.1.98-192.168.1.130 -j " . $input;
             exec($command_input);
         }
 
         $forward = $this->request->getVar("forward");
         if(isset($forward)) {
-            $command_forward = "sudo iptables -R FORWARD 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $forward;
+            $command_forward = "sudo iptables -R FORWARD 4 -m iprange --src-range 192.168.1.98-192.168.1.130 -j " . $forward;
             exec($command_forward);
         }
 
         $output = $this->request->getVar("output");
         if(isset($output)) {
-            $command_output = "sudo iptables -R OUTPUT 4 -m iprange --src-range 192.168.1.221-192.168.1.270 -j " . $output;
+            $command_output = "sudo iptables -R OUTPUT 4 -m iprange --src-range 192.168.1.98-192.168.1.130 -j " . $output;
             exec($command_output);
         }
     }
@@ -502,19 +502,19 @@ class Netfilter extends BaseController
     public function changePoliceM2(): void {
         $input = $this->request->getVar("input");
         if(isset($input)) {
-            $command_input = "sudo iptables -R INPUT 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $input;
+            $command_input = "sudo iptables -R INPUT 5 -m iprange --src-range 192.168.1.132-192.168.1.164 -j " . $input;
             exec($command_input);
         }
 
         $forward = $this->request->getVar("forward");
         if(isset($forward)) {
-            $command_forward = "sudo iptables -R FORWARD 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $forward;
+            $command_forward = "sudo iptables -R FORWARD 5 -m iprange --src-range 192.168.1.132-192.168.1.164 -j " . $forward;
             exec($command_forward);
         }
 
         $output = $this->request->getVar("output");
         if(isset($output)) {
-            $command_output = "sudo iptables -R OUTPUT 5 -m iprange --src-range 192.168.1.271-192.168.1.340 -j " . $output;
+            $command_output = "sudo iptables -R OUTPUT 5 -m iprange --src-range 192.168.1.132-192.168.1.164 -j " . $output;
             exec($command_output);
         }
     }

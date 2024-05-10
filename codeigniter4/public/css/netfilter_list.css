@@ -238,3 +238,32 @@ table tr td {
   background: rgb(0, 0, 0);
   color: white;
 }
+
+  /* 
+    Pour le navigation dans le list
+  */
+  .list-col {
+    margin: 10px 5px;
+  }
+
+  .list-nav-item {
+    width: 50px;
+    padding: 5px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .list-nav-item:hover {
+    background-color: gray;
+  }
+
+  .page-actif {
+    background-color:blue;
+  }
+
+  .part-list {
+    background-color: rgb(184, 184, 184);
+    padding: 10px;
+    border-radius: 10px;
+  }
