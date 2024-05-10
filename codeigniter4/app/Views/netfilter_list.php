@@ -1,6 +1,11 @@
 <?php 
-    $chain = $rules["chain"];
+  $chain = $rules["chain"];
+
+  if(!empty($rules["rules"]))
     $rule = $rules["rules"];
+
+  if($rules_c["rules"])
+    $rule_c = $rules_c["rules"];
 ?>
 
 
@@ -26,13 +31,8 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
-        <!-- <div class="save">
-          <a href="/netfilter/list?save=t">
-            <button>Save</button>
-          </a>
-        </div> -->
     </header>
-    
+
     <nav>
         <div class="sidebar">
             <div></div>
@@ -44,7 +44,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="/netfilter/list" class="nav-link">
+                  <a href="#" class="nav-link">
                     <span class="link">List</span>
                   </a>
                 </li>
@@ -70,17 +70,17 @@
 
           <div class="row">
             <div class="list-col">
-              <a href=""><button class="list-nav-item page-all page-actif">ALL</button></a>
-              <a href=""><button class="list-nav-item page-l1">L1</button></a>
-              <a href=""><button class="list-nav-item page-l2">L2</button></a>
-              <a href=""><button class="list-nav-item page-l3">L3</button></a>
-              <a href=""><button class="list-nav-item page-m1">M1</button></a>
-              <a href=""><button class="list-nav-item page-m2">M2</button></a>
+              <a href="/netfilter/list?page=1"><button class="list-nav-item page-all <?php if($page === 1) echo "page-actif" ?>">ALL</button></a>
+              <a href="/netfilter/list?page=2"><button class="list-nav-item page-l1 <?php if($page === 2) echo "page-actif" ?>">L1</button></a>
+              <a href="/netfilter/list?page=3"><button class="list-nav-item page-l2 <?php if($page === 3) echo "page-actif" ?>">L2</button></a>
+              <a href="/netfilter/list?page=4"><button class="list-nav-item page-l3 <?php if($page === 4) echo "page-actif" ?>">L3</button></a>
+              <a href="/netfilter/list?page=5"><button class="list-nav-item page-m1 <?php if($page === 5) echo "page-actif" ?>">M1</button></a>
+              <a href="/netfilter/list?page=6"><button class="list-nav-item page-m2 <?php if($page === 6) echo "page-actif" ?>">M2</button></a>
             </div>
           </div>
 
           <div class="row part-list">
-            <h1 class="list-title">List of the rules</h1>
+            <h1 class="list-title">List of the rules <?= ($page===2)?"L1":(($page===3)?"L2":(($page===4)?"L3":(($page===5)?"M1":(($page===6)?"M2":"")))) ?></h1>
             <div class="element">
               <?php foreach($chain as $c): ?>
                 <?php if($c[0] === "INPUT" || $c[0] === "OUTPUT" || $c[0] === "FORWARD"): ?>
@@ -93,21 +93,24 @@
                       <td class="source_tab">Source</td>
                       <td class="destination_tab">Destination</td>
                       <td class="descritpiton_tab">Descripition</td>
-                      <td class="supprimer_tab">Suppression</td>
+                      <td class="supprimer_tab">Delete</td>
                     </tr>
                     <?php if(!empty($rule[$c[0]])): ?>
                       <?php foreach($rule[$c[0]] as $k => $r): ?>
-                        <tr class=<?php if($k%2==0) echo "pair";else echo "impair"; ?> class="list-table" >
-                          <td class="target_tab"><?php echo $r[0];?></td>
-                          <td class="protocole_tab"><?php echo $r[1];?></td>
-                          <td class="opt_tab"><?php echo $r[2];?></td>
-                          <td class="source_tab"><?php echo $r[3];?></td>
-                          <td class="destination_tab"><?php echo $r[4];?></td>
-                          <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
-                          <?php if( $k > 4 ): ?>
-                            <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Supprimer</button></a></td>
-                          <?php endif;?>
-                        </tr>
+                        <?php if(in_array($r, $rule_c[$c[0]])):?>
+                          <tr class=<?php if($k%2==0) echo "pair";else echo "impair"; ?> class="list-table" >
+                            <td class="target_tab"><?php echo $r[0];?></td>
+                            <td class="protocole_tab"><?php echo $r[1];?></td>
+                            <td class="opt_tab"><?php echo $r[2];?></td>
+                            <td class="source_tab"><?php echo $r[3];?></td>
+                            <td class="destination_tab"><?php echo $r[4];?></td>
+                            <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
+                            <?php if( $k > 4 ): ?>
+                              <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Delete</button></a></td>
+                            <?php endif;?>
+                            <!-- <td><?= var_dump($rule_c[$c[0]]) ?></td> -->
+                          </tr>
+                        <?php endif;?>
                       <?php endforeach; ?>
                     <?php endif; ?>
                   </table>

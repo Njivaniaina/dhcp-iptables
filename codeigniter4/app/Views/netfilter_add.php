@@ -13,7 +13,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/netfilter_add.css" />
   </head>
   <body>
@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="/netfilter/add" class="nav-link">
+                  <a href="#" class="nav-link">
                     <span class="link">Add</span>
                   </a>
                 </li>
@@ -93,7 +93,7 @@
 
                         <input type="checkbox" name="check_mac" id="check_mac" class="checkbox"/><label for="check_mac">Mac</label><br>
                         <div class="mac">
-                            <input type="text" class="form-control" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-z:]+"/><br>
+                            <input type="text" class="form-control" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-fA-F:]+"/><br>
                         </div>
 
                         <input type="checkbox" name="check_source" id="check_source" class="checkbox"/><label for="check_source">Source</label><br>

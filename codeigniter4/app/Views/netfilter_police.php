@@ -94,7 +94,7 @@
               </a>
             </li>
             <li class="list">
-              <a href="/netfilter/police" class="nav-link">
+              <a href="#" class="nav-link">
                 <span class="link">Policy</span>
               </a>
             </li>

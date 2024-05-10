@@ -15,6 +15,11 @@ overlay.addEventListener("click", () => {
     navBar.classList.remove("open");
 });
 
+navBar.addEventListener("click", () => {
+    btnMenu.classList.toggle('logo');
+    btnMenu.classList.toggle('hidden-btn');
+    navBar.classList.remove("open");
+});
 
 const btnPrint = document.querySelector('#btn-print');
 

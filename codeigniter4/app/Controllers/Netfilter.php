@@ -9,35 +9,77 @@ class Netfilter extends BaseController
     # Pour le page d'accueil
     public function index(): string
     {
-        $this->levelPolicyCheck();
+        if(!$this->check_init()) {
+            shell_exec("./script/initialistaion.sh");
+        }
         return view('netfilter');
     }
 
-    public function levelPolicyCheck():void{
-
-        $defaultInput = "sudo iptables -A INPUT -p tcp -j ACCEPT";
-        $defaultForward = "sudo iptables -A FORWARD -p tcp -j ACCEPT";
-        $defaultOutput = "sudo iptables -A OUTPUT -p tcp -j ACCEPT";
-
-        for($line = 1 ; $line < 6; $line++)
-        {
-
-            $cmd = "sudo iptables -S INPUT ".$line;
-            exec($cmd, $ruleInput);
-            if(empty($ruleInput))
-                exec($defaultInput);
-
-            $cmd = "sudo iptables -S FORWARD ".$line;
-            exec($cmd, $ruleForward);
-            if(empty($ruleForward))
-                exec($defaultForward);
-        
-            $cmd = "sudo iptables -S OUTPUT ".$line;
-            exec($cmd, $ruleOutput);
-            if(empty($ruleOutput))
-                exec($defaultOutput);
-
+    public function check_init() {
+        exec("sudo iptables -S INPUT 1", $result);
+        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32")) {
+            return false;
         }
+        exec("sudo iptables -S INPUT 2", $result);
+        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S INPUT 3", $result );
+        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+                return false;
+        }
+        exec("sudo iptables -S INPUT 4", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S INPUT 5", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
+            return false;
+        }
+
+        exec("sudo iptables -S OUTPUT 1", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.1-192.168.1.32 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S OUTPUT 2", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S OUTPUT 3", $result );
+        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+                return false;
+        }
+        exec("sudo iptables -S OUTPUT 4", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S OUTPUT 5", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
+            return false;
+        }
+
+        exec("sudo iptables -S FORWARD 1", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.1-192.168.1.32 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S FORWARD 2", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S FORWARD 3", $result );
+        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+                return false;
+        }
+        exec("sudo iptables -S FORWARD 4", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
+            return false;
+        }
+        exec("sudo iptables -S FORWARD 5", $result);
+        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
+            return false;
+        }
+
+        return true;
     }
 
     public function error($msg): string {
@@ -50,6 +92,8 @@ class Netfilter extends BaseController
     public function list(): string {
         $tables  = new Iptables();  
 
+        $page  = (int)$this->request->getVar('page');
+
         $save  = $this->request->getVar('save');
         if(isset($save) && $save === "t") {
             $this->saveTables();
@@ -59,10 +103,17 @@ class Netfilter extends BaseController
         $line = $this->request->getVar('line');
         if(isset($delete) && isset($line)) {
             $tables->deleteRules($delete, $line);
+            return view('netfilter_cache');
         }
 
         $data = $tables->get_table_csv();
-        $d['rules'] = $data;
+        if(!empty($page))
+            $d['page'] = $page;
+        else 
+            $d['page'] = 1;
+
+        $d['rules'] =  $data;
+        $d['rules_c'] =  $this->verify_in($data, $page);
 
         # print_r($data);
         return view('netfilter_list', $d);
@@ -102,6 +153,101 @@ class Netfilter extends BaseController
 
         return view('netfilter_police', $d);
     }
+
+    ################################
+    #   Pour l'list  d'une regle   # 
+    ################################
+
+    public function verify_in($data, $page) {
+        $result["chain"] = $data["chain"];
+        $chain = $data["chain"];
+        $rule = $data["rules"];
+
+        foreach($chain as $c) {
+            $result["rules"][$c[0]] = []; 
+        }
+
+        foreach($chain as $c) {
+            foreach($rule[$c[0]] as $k => $r) {
+                $ip1 = explode('.', $r[3]);
+                $ip2 = explode('.', $r[4]);
+
+                if(!empty($ip1[3]) || !empty($ip2[3])) {
+                    if(!empty($ip1[3]))
+                        $ip_tab1 = $ip1[3]+0;
+                    if(!empty($ip2[3]))
+                        $ip_tab2 = $ip2[3]+0;
+                }
+
+                if($page === 2) {
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1 >= 1 && $ip_tab1 <= 32)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2 >= 1 && $ip_tab2 <= 32)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                }
+                else if($page === 3) {
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1 >= 34 && $ip_tab1 <= 62) ) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2 >= 34 && $ip_tab2 <= 62)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                }
+                else if($page === 4) {
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=64 && $ip_tab1<=96)) {
+                            $result["rules"][$c[0]][] = $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=64 && $ip_tab2<=96)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                }
+                else if($page === 5) {
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=98 && $ip_tab1<=130)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=98 && $ip_tab2<=130)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                }
+                else if($page === 6) {
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=132 && $ip_tab1<=164)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=132 && $ip_tab2<=164)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                }
+                else {
+                    $result = $data;
+                }
+            }
+        }
+
+        return $result;
+    } 
+
 
     ################################
     #   Pour l'ajout d'une regle   # 
@@ -519,7 +665,6 @@ class Netfilter extends BaseController
         }
     }
 
-    
     private function saveTables(): void {
         $command = 'sudo iptables-save';
         exec($command);
