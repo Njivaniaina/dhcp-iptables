@@ -29,7 +29,7 @@
 			    <li class="list">
                   <a href="/" class="nav-link">
                     <span class="link">
-						<div class="img">⌂</div>
+						<bdi>⌂</bdi>&ensp;Menu principal
 					</span>
                   </a>
                 </li>

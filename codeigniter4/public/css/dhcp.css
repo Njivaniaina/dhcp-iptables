@@ -123,8 +123,8 @@ nav.open ~ .overlay {
     pointer-events: auto;
 }
 
-div.img{
-	font-size: 2em;
+bdi{
+	font-size: 1.5em;
 }
 
 main{
