@@ -17,11 +17,11 @@ class Netfilter extends BaseController
 
     public function check_init() {
         exec("sudo iptables -S INPUT 1", $result);
-        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32 -j")) {
+        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32")) {
             return false;
         }
         exec("sudo iptables -S INPUT 2", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
+        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
             return false;
         }
         exec("sudo iptables -S INPUT 3", $result );
@@ -172,29 +172,71 @@ class Netfilter extends BaseController
                 $ip1 = explode('.', $r[3]);
                 $ip2 = explode('.', $r[4]);
 
+                if(!empty($ip1[3]) || !empty($ip2[3])) {
+                    if(!empty($ip1[3]))
+                        $ip_tab1 = $ip1[3]+0;
+                    if(!empty($ip2[3]))
+                        $ip_tab2 = $ip2[3]+0;
+                }
+
                 if($page === 2) {
-                    if(($r[3]>=1 && $r[3]<=32) || ($r[4]>=1 && $r[4]<=32)) {
-                        $result["rules"][$c[0]][] =  $r;
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1 >= 1 && $ip_tab1 <= 32)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2 >= 1 && $ip_tab2 <= 32)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
                     }
                 }
                 else if($page === 3) {
-                    if(($r[3]>=34 && $r[3]<=62) || ($r[4]>=34 && $r[4]<=62)) {
-                        $result["rules"][$c[0]][] =  $r;
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1 >= 34 && $ip_tab1 <= 62) ) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2 >= 34 && $ip_tab2 <= 62)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
                     }
                 }
                 else if($page === 4) {
-                    if(($r[3]>=64 && $r[3]<=96) || ($r[4]>=64 && $r[4]<=96)) {
-                        $result["rules"][$c[0]][] = $r;
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=64 && $ip_tab1<=96)) {
+                            $result["rules"][$c[0]][] = $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=64 && $ip_tab2<=96)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
                     }
                 }
                 else if($page === 5) {
-                    if(($r[3]>=98 && $r[3]<=130) || ($r[4]>=98 && $r[4]<=130)) {
-                        $result["rules"][$c[0]][] =  $r;
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=98 && $ip_tab1<=130)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=98 && $ip_tab2<=130)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
                     }
                 }
                 else if($page === 6) {
-                    if(($r[3]>=132 && $r[3]<=164) || ($r[4]>=132 && $r[4]<=164)) {
-                        $result["rules"][$c[0]][] =  $r;
+                    if(!empty($ip1[3])) {
+                        if(($ip_tab1>=132 && $ip_tab1<=164)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
+                    }
+                    if(!empty($ip2[3])) {
+                        if(($ip_tab2>=132 && $ip_tab2<=164)) {
+                            $result["rules"][$c[0]][] =  $r;
+                        }
                     }
                 }
                 else {
@@ -623,7 +665,6 @@ class Netfilter extends BaseController
         }
     }
 
-    
     private function saveTables(): void {
         $command = 'sudo iptables-save';
         exec($command);

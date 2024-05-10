@@ -93,7 +93,7 @@
 
                         <input type="checkbox" name="check_mac" id="check_mac" class="checkbox"/><label for="check_mac">Mac</label><br>
                         <div class="mac">
-                            <input type="text" class="form-control" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-z:]+"/><br>
+                            <input type="text" class="form-control" name="mac" id="mac" class="input" placeholder="xx:xx:xx:xx:xx:xx" pattern="[0-9a-fA-F:]+"/><br>
                         </div>
 
                         <input type="checkbox" name="check_source" id="check_source" class="checkbox"/><label for="check_source">Source</label><br>

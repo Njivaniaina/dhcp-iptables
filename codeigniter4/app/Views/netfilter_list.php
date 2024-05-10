@@ -1,7 +1,9 @@
 <?php 
   $chain = $rules["chain"];
+
   if(!empty($rules["rules"]))
     $rule = $rules["rules"];
+
   if($rules_c["rules"])
     $rule_c = $rules_c["rules"];
 ?>
@@ -96,7 +98,7 @@
                       <td class="source_tab">Source</td>
                       <td class="destination_tab">Destination</td>
                       <td class="descritpiton_tab">Descripition</td>
-                      <td class="supprimer_tab">Suppression</td>
+                      <td class="supprimer_tab">Delete</td>
                     </tr>
                     <?php if(!empty($rule[$c[0]])): ?>
                       <?php foreach($rule[$c[0]] as $k => $r): ?>
@@ -109,8 +111,9 @@
                             <td class="destination_tab"><?php echo $r[4];?></td>
                             <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
                             <?php if( $k > 4 ): ?>
-                              <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Supprimer</button></a></td>
+                              <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Delete</button></a></td>
                             <?php endif;?>
+                            <!-- <td><?= var_dump($rule_c[$c[0]]) ?></td> -->
                           </tr>
                         <?php endif;?>
                       <?php endforeach; ?>
