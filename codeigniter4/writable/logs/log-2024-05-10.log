@@ -918,3 +918,12 @@ in APPPATH/Models/Net.php on line 288.
 10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
 11 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/home/coriolan/Git-Github/dhcp-iptables/codeigniter4/public/index.php')
 >>>>>>> 358c71ef18310709ae92ea8403fea305a0122aba
+WARNING - 2024-05-10 12:08:48 --> [DEPRECATED] strlen(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Models/Net.php on line 203.
+ 1 APPPATH/Models/Net.php(203): strlen(null)
+ 2 APPPATH/Controllers/Dhcp.php(19): App\Models\Net->modifierSubnet(null, null, null, null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dhcp->globale()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dhcp))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
