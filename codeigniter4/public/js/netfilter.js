@@ -17,7 +17,7 @@ page_all.addEventListener('click', () => {
     page_m2.classList.remove('page-actif');
 
     level.setAttribute("value", "all");
-    title.innerText = "The Policy All";
+    title.innerText = "The Policy";
 });
 page_l1.addEventListener('click', () => {
     page_all.classList.remove('page-actif');
