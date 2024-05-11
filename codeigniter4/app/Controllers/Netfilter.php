@@ -34,29 +34,6 @@ class Netfilter extends BaseController
             }
         }
 
-        // if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.1-192.168.1.32")) {
-        //     return false;
-        // }
-        // var_dump($result);
-        // if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.34-192.168.1.62")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S INPUT 3", $result );
-        // var_dump($result);
-        // if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.64-192.168.1.96")) {
-        //         return false;
-        // }
-        // exec("sudo iptables -S INPUT 4", $result);
-        // var_dump($result);
-        // if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.98-192.168.1.130")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S INPUT 5", $result);
-        // var_dump($result);
-        // if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.132-192.168.1.164")) {
-        //     return false;
-        // }
-
         for($i=1;$i<6;$i++) {
             exec("sudo iptables -S OUTPUT $i", $result2[$i]);
         }
@@ -65,48 +42,6 @@ class Netfilter extends BaseController
             if($plage2[5] !== $plages[$i-1])
                 return false;
         }
-
-        // exec("sudo iptables -S OUTPUT 1", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S OUTPUT 2", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.34-192.168.1.62")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S OUTPUT 3", $result );
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.64-192.168.1.96")) {
-        //         return false;
-        // }
-        // exec("sudo iptables -S OUTPUT 4", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.98-192.168.1.130")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S OUTPUT 5", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.132-192.168.1.164")) {
-        //     return false;
-        // }
-
-        // exec("sudo iptables -S FORWARD 1", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S FORWARD 2", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.34-192.168.1.62")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S FORWARD 3", $result );
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.64-192.168.1.96")) {
-        //         return false;
-        // }
-        // exec("sudo iptables -S FORWARD 4", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.98-192.168.1.130")) {
-        //     return false;
-        // }
-        // exec("sudo iptables -S FORWARD 5", $result);
-        // if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.132-192.168.1.164")) {
-        //     return false;
-        // }
 
         for($i=1;$i<6;$i++) {
             exec("sudo iptables -S FORWARD $i", $result3[$i]);
