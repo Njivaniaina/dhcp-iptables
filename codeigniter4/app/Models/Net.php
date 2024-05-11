@@ -21,20 +21,13 @@ class DHCPError
 
     public function test_ip($ip)
     {
-        $tab_ip = explode(".",$ip);
-        if(count($tab_ip) != 4)
-        {
-            return 0;
-        }
-        foreach($tab_ip as $element)
-        {
-            //156
-            if(!($this->sumAscii($element) >= 48 && $this->sumAscii($element) <= 156))
-            {
-                return 0;
+        $cpt = 0;
+        foreach(explode(".",$ip) as $element){
+            if($element < 256 && $element >= 0){
+                $cpt++;
             }
         }
-        return 1;
+        return $cpt == 4?"true":"false";
     }
 
     public function sumAscii($chaine)
@@ -50,11 +43,47 @@ class DHCPError
     public function test_subnet($subnet,$netmask,$min,$max)
     {
         $sum = 0;
-        $sum += $this->test_ip($subnet);
-        $sum += $this->test_ip($netmask);
-        $sum += $this->test_ip($min);
-        $sum += $this->test_ip($max);
+        $sum += $this->test_ip($subnet)=="true"?1:0;
+        $sum += $this->test_ip($netmask)=="true"?1:0;
+        $sum += $this->test_ip($min)=="true"?1:0;
+        $sum += $this->test_ip($max)=="true"?1:0;
         return $sum == 4?1:0;
+    }
+
+    public function getBin($ip){
+        $res = explode(".",$ip);
+        $res = array_map(function($e){
+            $binaire = decbin($e);
+            $chaine = "";
+            for($i= 0;$i < 8-strlen($binaire);$i++){
+                $chaine .= "0";
+            }
+            return $chaine.$binaire;
+        },$res);
+        return implode(".",$res);
+    }
+
+    public function to_int($binaire){
+        $res = [];
+        foreach(explode(".",$binaire) as $element){
+            $res[] = bindec($element);
+        }
+        return implode(".",$res);
+    }
+
+    public function logique($ip,$netmask,$subnet){
+        $ip = $this->getBin($ip);
+        $netmask= $this->getBin($netmask);
+        $res = "";
+        for($i = 0;$i < 35;$i++){
+            $res .= $ip[$i]&$netmask[$i];
+        }
+        if($this->to_int($res) == $subnet){
+            return "true";
+        }
+        else{
+            return "false";
+        }
     }
 }
 
@@ -194,16 +223,13 @@ class Net
 
     public function modifierSubnet($subnet,$netmask,$min,$max)
     {
-        //pour la modification
-        // $error = new DHCPError();
-        // $this->removeSubnetWithLines();
-        // $this->supprimerSubnet();
-        // if($error->test_subnet($subnet,$netmask,$min,$max))
-        // {
+        $error = new DHCPError();
         if(strlen($subnet) && strlen($netmask) && strlen($min) && strlen($max))
-            $this->addSubnet($subnet,$netmask,$min,$max);
-        // }$this->removeSubnetWithLines();
-        // $this->supprimerSubnet();
+        {
+            if($error->logique($min,$netmask,$subnet)=="true" && $error->logique($max,$netmask,$subnet)=="true"){
+                $this->addSubnet($subnet,$netmask,$min,$max);
+            }
+        }
     }
 
     public function supprimerSubnet_s()
@@ -272,7 +298,14 @@ class Net
     //ajoute un subnet dans le fichier , il est necessaire de savoir
     //que cette fonction supprime d abord tout les subnet existantes
         $this->removeSubnetWithLines();
-        $this->supprimerSubnet();
+        if($min > $max){
+            $tmp = $min;
+            $min = $max;
+            $max = $tmp;
+        }
+        $error = new DHCPError();
+        if($error->logique($min,$netmask,$subnet)=="true" && $error->logique($max,$netmask,$subnet)=="true" && $error->test_subnet($subnet,$netmask,$min,$max)){
+            $this->supprimerSubnet();
             $ligne1 = "subnet $subnet netmask $netmask {\n";
             $ligne2 = "  range $min $max\n";
             $ligne3 = "  option routers rtr-239-0-1.example.org, rtr-239-0-2.example.org;\n}\n";
@@ -280,6 +313,7 @@ class Net
             $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
             fputs($fichier,$cmd);
             fclose($fichier);
+        }
     }
 
     public function getLinesHost()
@@ -318,8 +352,9 @@ class Net
 
     public function addHost($nom,$mac,$ip)
     {
+        $error = new DHCPError();
         $fichier = fopen("/etc/dhcp/dhcpd.conf","a");
-            if($nom!="" && $mac!="" && $ip!="")
+            if($nom!="" && $mac!="" && $ip!="" && $error->test_mac($mac) == true && $error->test_ip($ip) == "true")
             {
                 $host = "host $nom {\n  hardware ethernet $mac;\n  fixed-address $ip;\n}\n";
                 fputs($fichier,$host);
@@ -409,6 +444,8 @@ class Net
 // $n->verification_fichier("/etc/dhcp/dhcpd.conf");
 // $n->modif_host_lines(1,"junior","467543","123");
 // $n->removeHostWithLines();
+// $n->addSubnet("10.254.239.0","255.255.255.224","10.254.239.10","10.254.239.20");
+// print_r($n->getSubnet());
 // $n->addSubnet("mille","467543","123","hello");
 // $n->removeSubnetWithLines();
 // $n->range();
