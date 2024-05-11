@@ -71,6 +71,11 @@ class Dhcp extends BaseController
             }
         }
 
+        if($this->request->getVar('supprimer')>0){
+            header("Location: " . str_replace('index.php/','',$_SERVER['PHP_SELF']));
+            exit;
+        }
+        
         $data['host']=$n->getHost();
         return view('specific',$data);
     }
