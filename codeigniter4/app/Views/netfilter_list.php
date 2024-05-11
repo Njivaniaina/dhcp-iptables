@@ -82,45 +82,56 @@
           <div class="row part-list">
             <h1 class="list-title">List of the rules <?= ($page===2)?"L1":(($page===3)?"L2":(($page===4)?"L3":(($page===5)?"M1":(($page===6)?"M2":"")))) ?></h1>
             <div class="element">
-              <?php foreach($chain as $c): ?>
+
+            <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-link  active" id="nav-INPUT-tab" data-bs-toggle="tab" href="#INPUT" role="tab" aria-controls="INPUT" aria-selected="true">INPUT</a>
+              <a class="nav-link" id="nav-OUTPUT-tab" data-bs-toggle="tab" href="#OUTPUT" role="tab" aria-controls="OUTPUT" aria-selected="false">OUTPUT</a>
+              <a class="nav-link" id="nav-FORWARD-tab" data-bs-toggle="tab" href="#FORWARD" role="tab" aria-controls="FORWARD" aria-selected="false">FORWARD</a>
+            </nav>
+              <div class="tab-content" id="nav-tabContent">
+              <?php foreach($chain as $c): ?>                       
                 <?php if($c[0] === "INPUT" || $c[0] === "OUTPUT" || $c[0] === "FORWARD"): ?>
-                  <h2><?php echo $c[0]; ?></h2>
-                  <table class="tab" >
-                    <tr class="title_line">
-                      <td class="target_tab">Target</td>
-                      <td class="protocole_tab">Protocole</td>
-                      <td class="opt_tab">Opt</td>
-                      <td class="source_tab">Source</td>
-                      <td class="destination_tab">Destination</td>
-                      <td class="descritpiton_tab">Descripition</td>
-                      <td class="supprimer_tab">Delete</td>
-                    </tr>
-                    <?php if(!empty($rule[$c[0]])): ?>
-                      <?php foreach($rule[$c[0]] as $k => $r): ?>
-                        <?php if(in_array($r, $rule_c[$c[0]])):?>
-                          <tr class=<?php if($k%2==0) echo "pair";else echo "impair"; ?> class="list-table" >
-                            <td class="target_tab"><?php echo $r[0];?></td>
-                            <td class="protocole_tab"><?php echo $r[1];?></td>
-                            <td class="opt_tab"><?php echo $r[2];?></td>
-                            <td class="source_tab"><?php echo $r[3];?></td>
-                            <td class="destination_tab"><?php echo $r[4];?></td>
-                            <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
-                            <?php if( $k > 4 ): ?>
-                              <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Delete</button></a></td>
-                            <?php endif;?>
-                            <!-- <td><?= var_dump($rule_c[$c[0]]) ?></td> -->
-                          </tr>
-                        <?php endif;?>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                  </table>
+                  <!h2><!?php echo $c[0]; ?><!/h2>
+                  <div class="tab-pane fade <?php if($c[0] == "INPUT")echo "show active"; ?>" id="<?php echo $c[0]; ?>" role="tabpanel" aria-labelledby="nav-<?php echo $c[0]; ?>-tab">
+                    <table class="tab" >
+                      <tr class="title_line">
+                        <td class="target_tab">Target</td>
+                        <td class="protocole_tab">Protocole</td>
+                        <td class="opt_tab">Opt</td>
+                        <td class="source_tab">Source</td>
+                        <td class="destination_tab">Destination</td>
+                        <td class="descritpiton_tab">Descripition</td>
+                        <td class="supprimer_tab">Delete</td>
+                      </tr>
+                      <?php if(!empty($rule[$c[0]])): ?>
+                        <?php foreach($rule[$c[0]] as $k => $r): ?>
+                          <?php if(in_array($r, $rule_c[$c[0]])):?>
+                            <tr class=<?php if($k%2==0) echo "pair";else echo "impair"; ?> class="list-table" >
+                              <td class="target_tab"><?php echo $r[0];?></td>
+                              <td class="protocole_tab"><?php echo $r[1];?></td>
+                              <td class="opt_tab"><?php echo $r[2];?></td>
+                              <td class="source_tab"><?php echo $r[3];?></td>
+                              <td class="destination_tab"><?php echo $r[4];?></td>
+                              <td class="descriptiton_tab"><?php if(!empty($r[5])) echo $r[5]; else echo "--"; ?></td>
+                              <?php if( $k > 4 ): ?>
+                                <td class="supprimer_tab"><a href=<?php echo "./list?delete=$c[0]&line=$k"; ?>><button>Delete</button></a></td>
+                              <?php endif;?>
+                              <!-- <td><?= var_dump($rule_c[$c[0]]) ?></td> -->
+                            </tr>
+                          <?php endif;?>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
+                    </table>
+                  </div>
                 <?php endif; ?>
               <?php endforeach; ?>
+              </div>
             </div>
           </div>
         </div>
     </main>
 
     <script src="../js/script.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
