@@ -168,3 +168,11 @@ main .main-left{
     margin-top: 10px;
   }
 }
+
+a{
+  text-decoration: none;
+  color: blue;
+}
+a:visited{
+  color: blue;
+}
