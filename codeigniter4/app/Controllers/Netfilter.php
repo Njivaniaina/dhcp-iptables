@@ -15,68 +15,41 @@ class Netfilter extends BaseController
         return view('netfilter');
     }
 
-    public function check_init() {
-        exec("sudo iptables -S INPUT 1", $result);
-        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.1-192.168.1.32")) {
-            return false;
+    public function check_init(): bool {
+        $plages  = [
+            "192.168.1.1-192.168.1.32", 
+            "192.168.1.34-192.168.1.62", 
+            "192.168.1.64-192.168.1.96",
+            "192.168.1.98-192.168.1.130",
+            "192.168.1.132-192.168.1.164"
+        ];
+
+        for($i=1;$i<6;$i++) {
+            exec("sudo iptables -S INPUT $i", $result1[$i]);
         }
-        exec("sudo iptables -S INPUT 2", $result);
-        if(empty($result[0]) || !strpos($result[0], "-m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S INPUT 3", $result );
-        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+        for($i=1;$i<6;$i++) {
+            $plage1 = explode(" ", $result1[$i][0]);
+            if($plage1[5] !== $plages[$i-1]) {
                 return false;
-        }
-        exec("sudo iptables -S INPUT 4", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S INPUT 5", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A INPUT -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
-            return false;
+            }
         }
 
-        exec("sudo iptables -S OUTPUT 1", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.1-192.168.1.32 -j")) {
-            return false;
+        for($i=1;$i<6;$i++) {
+            exec("sudo iptables -S OUTPUT $i", $result2[$i]);
         }
-        exec("sudo iptables -S OUTPUT 2", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S OUTPUT 3", $result );
-        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+        for($i=1;$i<6;$i++) {
+            $plage2 = explode(" ", $result2[$i][0]);
+            if($plage2[5] !== $plages[$i-1])
                 return false;
-        }
-        exec("sudo iptables -S OUTPUT 4", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S OUTPUT 5", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A OUTPUT -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
-            return false;
         }
 
-        exec("sudo iptables -S FORWARD 1", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.1-192.168.1.32 -j")) {
-            return false;
+        for($i=1;$i<6;$i++) {
+            exec("sudo iptables -S FORWARD $i", $result3[$i]);
         }
-        exec("sudo iptables -S FORWARD 2", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.34-192.168.1.62 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S FORWARD 3", $result );
-        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.64-192.168.1.96 -j")) {
+        for($i=1;$i<6;$i++) {
+            $plage3 = explode(" ", $result3[$i][0]);
+            if($plage3[5] !== $plages[$i-1])
                 return false;
-        }
-        exec("sudo iptables -S FORWARD 4", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.98-192.168.1.130 -j")) {
-            return false;
-        }
-        exec("sudo iptables -S FORWARD 5", $result);
-        if(empty($result[0]) || !strpos($result[0], "-A FORWARD -m iprange --src-range 192.168.1.132-192.168.1.164 -j")) {
-            return false;
         }
 
         return true;
@@ -332,10 +305,11 @@ class Netfilter extends BaseController
         if(isset($check_source)){
             //$command = $this->checkS($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
             
-            if($chain != "INPUT")
-                return $this->error("can not be OUTPUT or FORWARD");
+            // if($chain != "INPUT")
+            //     return $this->error("can not be OUTPUT or FORWARD");
 
-            if($chain == "INPUT" && !isset($check_mac) && isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
+            // $chain == "INPUT" &&
+            if(!isset($check_mac) && isset($check_source) && !isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             {
                 $source = $this->request->getVar("source");
                 try{
@@ -368,10 +342,11 @@ class Netfilter extends BaseController
         if(isset($check_destination)){
             //$command = $this->checkD($command, $chain, $check_mac, $check_sourceource, $check_destinationestination, $check_interface_source, $check_interface_destination);
          
-            if($chain != "OUTPUT")
-                return $this->error("can not be INPUT or FORWARD");
+            // if($chain != "OUTPUT")
+            //     return $this->error("can not be INPUT or FORWARD");
 
-            if($chain == "OUTPUT" && !isset($check_mac) && !isset($check_source) && isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
+            // $chain == "OUTPUT" &&
+            if(!isset($check_mac) && !isset($check_source) && isset($check_destination) && !isset($check_interface_destination) && !isset($check_interface_source))
             { 
                 $destination = $this->request->getVar("destination");
                 try{

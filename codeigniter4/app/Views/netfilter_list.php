@@ -31,6 +31,11 @@
         <div class="title">
             <h1>NETFILTER</h1>
         </div>
+        <div class="save">
+          <a href="/netfilter/list?save=t">
+            <button>Save</button>
+          </a>
+        </div>
     </header>
 
     <nav>

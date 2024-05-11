@@ -45,7 +45,6 @@
     </nav>
     <section class="overlay"></section>
     
-
     <div class="container">
         <form action="/specific" method="get">
         <h2 style="text-align: center;" class="m-4">Configuration spécifique</h2>

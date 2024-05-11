@@ -123,7 +123,7 @@
             <div class="row">
               <div class="col-md-8 offset-md-2 card">
                 <div class="card-header">
-                  <h2 class="policy-title">The Policy All</h2>
+                  <h2 class="policy-title">The Policy</h2>
                 </div>
                 <div class="card-body">
                   <form action="./police" method="post">
