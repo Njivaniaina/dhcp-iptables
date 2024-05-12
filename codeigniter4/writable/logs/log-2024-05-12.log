@@ -1,0 +1,44 @@
+CRITICAL - 2024-05-12 12:17:18 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 31.
+ 1 APPPATH/Controllers/Netfilter.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->check_init()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-12 12:17:53 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 31.
+ 1 APPPATH/Controllers/Netfilter.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->check_init()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-12 12:18:02 --> ErrorException: Undefined array key 0
+[Method: GET, Route: netfilter]
+in APPPATH/Controllers/Netfilter.php on line 31.
+ 1 APPPATH/Controllers/Netfilter.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(12): App\Controllers\Netfilter->check_init()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2024-05-12 12:26:21 --> ErrorException: Undefined variable $chainL1
+[Method: GET, Route: netfilter/list]
+in APPPATH/Models/Iptables.php on line 125.
+ 1 APPPATH/Models/Iptables.php(125): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Netfilter.php(94): App\Models\Iptables->get_table_csv()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Netfilter->list()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()

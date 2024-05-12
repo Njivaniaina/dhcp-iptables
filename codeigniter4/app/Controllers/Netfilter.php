@@ -28,8 +28,12 @@ class Netfilter extends BaseController
             exec("sudo iptables -S INPUT $i", $result1[$i]);
         }
         for($i=1;$i<6;$i++) {
-            $plage1 = explode(" ", $result1[$i][0]);
-            if($plage1[5] !== $plages[$i-1]) {
+            if(!empty($result1[$i])){
+                $plage1 = explode(" ", $result1[$i][0]);
+                if($plage1[5] !== $plages[$i-1]) {
+                    return false;
+                }
+            }else{
                 return false;
             }
         }
@@ -38,18 +42,26 @@ class Netfilter extends BaseController
             exec("sudo iptables -S OUTPUT $i", $result2[$i]);
         }
         for($i=1;$i<6;$i++) {
-            $plage2 = explode(" ", $result2[$i][0]);
-            if($plage2[5] !== $plages[$i-1])
+            if(!empty($result2[$i])){
+                $plage2 = explode(" ", $result2[$i][0]);
+                if($plage2[5] !== $plages[$i-1])
+                    return false;
+            }else{
                 return false;
+            }
         }
 
         for($i=1;$i<6;$i++) {
             exec("sudo iptables -S FORWARD $i", $result3[$i]);
         }
         for($i=1;$i<6;$i++) {
-            $plage3 = explode(" ", $result3[$i][0]);
-            if($plage3[5] !== $plages[$i-1])
+            if(!empty($result3[$i])){
+                $plage3 = explode(" ", $result3[$i][0]);
+                if($plage3[5] !== $plages[$i-1])
+                    return false;
+            }else{
                 return false;
+            }
         }
 
         return true;
