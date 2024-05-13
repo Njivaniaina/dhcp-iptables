@@ -75,6 +75,10 @@ class Netfilter extends BaseController
     
     # Pour le page list
     public function list(): string {
+        if(!$this->check_init()) {
+            shell_exec("./script/initialistaion.sh");
+        }
+
         $tables  = new Iptables();  
 
         $page  = (int)$this->request->getVar('page');
@@ -106,6 +110,10 @@ class Netfilter extends BaseController
 
     # Pour le page d'ajout
     public function add(): string{
+        if(!$this->check_init()) {
+            shell_exec("./script/initialistaion.sh");
+        }
+
         $tables  = new Iptables();
 
         $data = $tables->get_interface_csv();
@@ -117,6 +125,10 @@ class Netfilter extends BaseController
 
     # Pour la page a propos 
     public function police(): string {
+        if(!$this->check_init()) {
+            shell_exec("./script/initialistaion.sh");
+        }
+
         $tables  = new Iptables();
         $level = $this->request->getVar("level");
         
